@@ -27,9 +27,8 @@ gulp.task('bump',function(cb) {
 
 gulp.task('push',function(cb) {
 	gulp.src(['./package.json'])
-
 		// commit the changed files
-		.pipe(git.add()) //TODO add
+		// .pipe(git.add()) //TODO add
 		.pipe(git.commit('bump version'))
 
 		// filter one file
@@ -41,10 +40,7 @@ gulp.task('push',function(cb) {
 		.pipe(push({
 			repository: 'origin',
 			refspec: 'HEAD'
-		}))
-		.on('end', function () {
-				console.log(chalk.bgBlue('<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  release done  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>'));
-		});
+		}));
 	cb()
 });
 
