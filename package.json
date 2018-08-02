@@ -1,6 +1,6 @@
 {
   "name": "bumpVersion",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "版本管理自动化",
   "main": "index.js",
   "dependencies": {
