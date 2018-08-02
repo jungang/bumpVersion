@@ -331,15 +331,6 @@ gulp.task('clean',function (cb) {
 	cb()
 });
 
-/*gulp.task('apidoc', (done) => {
-	apidoc({
-		src: 'src/',
-		dest: 'docs',
-		debug: true,
-		includeFilters: ['.*\\.js$']
-	}, done);
-});*/
-
 gulp.task('build', ['clean'], function(cb){
 	console.log('文件构建中...');
 	gulpSequence('fileinclude','css','webpack','libs','images','bumpVersion',cb);
@@ -381,5 +372,3 @@ gulp.task('version',function (done) {
 		done()
 	});
 });
-
-gulp.task('default', gulpSequence('build', 'serve', 'watch'));
