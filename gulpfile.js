@@ -36,6 +36,19 @@ gulp.task('release', function () {
 
 });
 
+gulp.task('forceRelease', function () {
+
+    return gulp.src(options.versionToBump)
+      .pipe(bump({type: argv.type || options.bumpType}))
+      .pipe(gulp.dest(options.dest))
+      .pipe(git.commit(options.commitMessage))
+      .pipe(filter(options.versionToTag))
+      .pipe(tag())
+      .pipe(push());
+
+
+});
+
 function sand() {
 
   let date = new Date();
