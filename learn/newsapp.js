@@ -4,20 +4,20 @@
 	} (this,
 		function() {
 			"use strict";
-			function e(e) {
-				var n = document.getElementById(e);
-				return n || (n = document.createElement("iframe"), n.id = e, n.style.display = "none", document.body.appendChild(n), n)
+			function createIframe(id) {
+				var iframe = document.getElementById(id);
+				return iframe || (iframe = document.createElement("iframe"), iframe.id = id, iframe.style.display = "none", document.body.appendChild(iframe), iframe)
 			}
-			function n(e) {
+			function removeIframe(id) {
 				setTimeout(function() {
-						var n = document.getElementById(e);
-						n && document.body.removeChild(n)
+						var e = document.getElementById(id);
+						e && document.body.removeChild(e)
 					},
 					3e3)
 			}
-			function o(o, t) {
-				e(o).src = t,
-					n(o)
+			function createEle(id, url) {
+				createIframe(id).src = url,
+					removeIframe(id)
 			}
 			function t(e) {
 				var n = [{
@@ -56,7 +56,7 @@
 				return n || ((n = document.createElement("input")).id = e, n.type = "file", n.style.display = "none", n.accept = "image/*", document.body.appendChild(n)),
 					n
 			}
-			var d = {
+			var urlList = {
 					ui: "docmode://",
 					copy: "copy://{{text}}",
 					share: "share://",
@@ -86,16 +86,16 @@
 			return {
 				ui: {
 					showToolbar: function() {
-						o("showToolbar", d.ui + "toolbar/show")
+						createEle("showToolbar", urlList.ui + "toolbar/show")
 					},
 					hideToolbar: function() {
-						o("hideToolbar", d.ui + "toolbar/hide")
+						createEle("hideToolbar", urlList.ui + "toolbar/hide")
 					},
 					modifyTitle: function(e) {
-						o("modifyTitle", d.ui + "modifytitle/" + encodeURIComponent(e))
+						createEle("modifyTitle", urlList.ui + "modifytitle/" + encodeURIComponent(e))
 					},
 					button: function(e, n) {
-						o("button", d.ui + "actionbutton/" + encodeURIComponent(e)),
+						createEle("button", urlList.ui + "actionbutton/" + encodeURIComponent(e)),
 							window.__newsapp_browser_actionbutton = function() {
 								window.__newsapp_browser_actionbutton = null,
 								n && n()
@@ -106,31 +106,31 @@
 					var i = void 0;
 					switch (e) {
 						case "article":
-							i = d.openArticle.replace("{{docId}}", encodeURIComponent(n));
+							i = urlList.openArticle.replace("{{docId}}", encodeURIComponent(n));
 							break;
 						case "vedio":
-							i = d.openVedio.replace("{{videoId}}", encodeURIComponent(n));
+							i = urlList.openVedio.replace("{{videoId}}", encodeURIComponent(n));
 							break;
 						case "photo":
-							i = d.openPhoto.replace("{{docId}}", encodeURIComponent(n)).replace("{{channelId}}", encodeURIComponent(t));
+							i = urlList.openPhoto.replace("{{docId}}", encodeURIComponent(n)).replace("{{channelId}}", encodeURIComponent(t));
 							break;
 						default:
 							return
 					}
-					o("open_" + e + "_" + n, i)
+					createEle("open_" + e + "_" + n, i)
 				},
 				copy: function(e) {
-					o("copy", d.copy.replace("{{text}}", encodeURIComponent(e)))
+					createEle("copy", urlList.copy.replace("{{text}}", encodeURIComponent(e)))
 				},
 				device: function(e) {
-					o("device", d.device),
+					createEle("device", urlList.device),
 						window.__newsapp_device_done = function(n) {
 							window.__newsapp_device_done = null,
 							e && e(JSON.stringify(n))
 						}
 				},
 				trash: function(e) {
-					o("trash", d.trash),
+					createEle("trash", urlList.trash),
 						window.__newsapp_trashid_done = function(n) {
 							window.__newsapp_trashid_done = null,
 							e && e(JSON.stringify(n))
@@ -138,7 +138,7 @@
 				},
 				encrypt: function(e, n) {
 					var t = encodeURIComponent(JSON.stringify(e));
-					o("encrypt", d.encrypt.replace("{{text}}", t)),
+					createEle("encrypt", urlList.encrypt.replace("{{text}}", t)),
 						window.__newsapp_encrypt_done = function(e) {
 							window.__newsapp_encrypt_done = null,
 							n && n(e)
@@ -148,7 +148,7 @@
 				share: {
 					invokeShare: function(e, n) {
 						t(e),
-							o("share", d.share),
+							createEle("share", urlList.share),
 							window.__newsapp_share_done = function() {
 								window.__newsapp_share_done = null,
 								n && n()
@@ -168,7 +168,7 @@
 							a || ((a = document.createElement("div")).style.display = "none", a.id = "__newsapp_alarm_" + i, document.body.appendChild(a)),
 								a.innerHTML = e[i]
 						}
-						o("alarm_" + t, d.alarm + t);
+						createEle("alarm_" + t, urlList.alarm + t);
 						var p = window;
 						r && window.extra,
 							p["__newsapp_alarm_" + t + "_done"] = function(e) {
@@ -192,7 +192,7 @@
 							a || ((a = document.createElement("div")).style.display = "none", a.id = "__newsapp_alert_" + i, document.body.appendChild(a)),
 								a.innerHTML = e[i]
 						}
-						o("remind_" + t, d.remind + t);
+						createEle("remind_" + t, urlList.remind + t);
 						var p = window;
 						r && window.extra,
 							p["__newsapp_alert_" + t + "_done"] = function(e) {
@@ -201,17 +201,17 @@
 							}
 					}
 				},
-				login: function(e) {
-					o("login", d.login),
+				login: function(callback) {
+					createEle("login", urlList.login),
 						window.__newsapp_login_done = function(n) {
 							window.__newsapp_login_done = null,
-							e && e(n)
+							callback && callback(n)
 						}
 				},
 				userinfo: function(e) {
-					if (o("userinfo", d.userinfo), window.__newsapp_userinfo_done = function(n) {
+					if (createEle("userinfo", urlList.userinfo), window.__newsapp_userinfo_done = function(n) {
 							window.__newsapp_userinfo_done = null,
-								n ? (o("login", d.login), e && e(n)) : alert(n)
+								n ? (createEle("login", urlList.login), e && e(n)) : alert(n)
 						},
 							!c) {
 						var n = i("S_INFO"),
@@ -221,13 +221,13 @@
 						})
 					}
 				},
-				location: function(e, n) { ("current" === e || "switch" === e) && (o("location_" + e, d.location + e), window.__newsapp_location_done = function(e) {
+				location: function(e, n) { ("current" === e || "switch" === e) && (createEle("location_" + e, urlList.location + e), window.__newsapp_location_done = function(e) {
 					window.__newsapp_location_done = null,
 					n && n(e)
 				})
 				},
 				setting: function(e) {
-					o("setting", d.setting),
+					createEle("setting", urlList.setting),
 						window.__newsapp_settings_done = function(n) {
 							window.__newsapp_settings_done = null,
 							e && e(n)
@@ -244,47 +244,47 @@
 						r.setAttribute("boardid", t),
 						r.setAttribute("docid", i),
 						r.setAttribute("replyid", p),
-						o("comment", d.comment),
+						createEle("comment", urlList.comment),
 						window.__newsapp_comment_done = function(e) {
 							window.__newsapp_comment_done = null,
 							n && n(e)
 						}
 				},
 				opencomment: function(e) {
-					o("opencomment", d.opencomment.replace("{{docId}}", e))
+					createEle("opencomment", urlList.opencomment.replace("{{docId}}", e))
 				},
 				pushview: {
 					feedback: function(e) {
 						var n = e ? "/" + encodeURIComponent(e) : "";
-						o("pushview__feedback", d.pushview + "feedback" + n)
+						createEle("pushview__feedback", urlList.pushview + "feedback" + n)
 					},
 					personalcenter: function() {
-						o("pushview__personalcenter", d.pushview + "personalcenter")
+						createEle("pushview__personalcenter", urlList.pushview + "personalcenter")
 					},
 					mytask: function() {
-						o("pushview__mytask", d.pushview + "mytask")
+						createEle("pushview__mytask", urlList.pushview + "mytask")
 					},
 					inapppurchase: function() {
-						o("pushview__inapppurchase", d.pushview + "inapppurchase")
+						createEle("pushview__inapppurchase", urlList.pushview + "inapppurchase")
 					},
 					wallet: function(e) {
-						o("pushview__wallet" + e, d.pushview + "wallet/" + e)
+						createEle("pushview__wallet" + e, urlList.pushview + "wallet/" + e)
 					},
 					coupon: function() {
-						o("pushview__coupon", d.pushview + "wallet/coupon")
+						createEle("pushview__coupon", urlList.pushview + "wallet/coupon")
 					},
 					applicationsettings: function() {
-						o("pushview__applicationsettings", d.pushview + "applicationsettings")
+						createEle("pushview__applicationsettings", urlList.pushview + "applicationsettings")
 					},
 					settings: function() {
-						o("pushview__settings", d.pushview + "settings")
+						createEle("pushview__settings", urlList.pushview + "settings")
 					},
 					qrcode: function() {
-						o("pushview__qrcode", d.pushview + "qrcode")
+						createEle("pushview__qrcode", urlList.pushview + "qrcode")
 					}
 				},
 				updateprofile: function() {
-					o("updateprofile", d.updateprofile)
+					createEle("updateprofile", urlList.updateprofile)
 				},
 				uploadimage: function(e, n) {
 					var t = e.width,
@@ -293,7 +293,7 @@
 						c = void 0 === p ? 1e4: p,
 						l = e.type,
 						u = void 0 === l ? "album": l;
-					if (r) o("upload" + u, "" + d.uploadimage + u + "/" + i + "x" + c),
+					if (r) createEle("upload" + u, "" + urlList.uploadimage + u + "/" + i + "x" + c),
 						window.__newsapp_upload_image_done = function(e) {
 							window.__newsapp_upload_image_done = null,
 								alert(e),
@@ -322,7 +322,7 @@
 					}
 				},
 				downloadImage: function(e, n) {
-					o("downloadImage", d.downloadImage.replace("{{imgUrl}}", encodeURIComponent(e)));
+					createEle("downloadImage", urlList.downloadImage.replace("{{imgUrl}}", encodeURIComponent(e)));
 					var t = window;
 					r && window.extra && (t = window.extra),
 						t.__newsapp_download_image_done = function(e, o) {
