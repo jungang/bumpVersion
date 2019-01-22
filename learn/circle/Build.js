@@ -16,7 +16,7 @@ export default class Build {
 
 
 		let init = ()=>{
-			// buildDom()
+			// buildDom() 
 		}
 
 		init();
