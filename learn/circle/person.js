@@ -1,8 +1,8 @@
 export default class Person {
 
 	
-	constructor(){
-		this.name = 'jun'
+	constructor(str){
+		this.name = str || `jun`
 	}
 	
 	sayName(){
