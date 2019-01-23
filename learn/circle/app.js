@@ -23,7 +23,8 @@ $(function () {
 	let build = new Build(args);
 	build.generate();
 
-	let c1 = new Calculate();
+	let c = new Calculate();
+	c.cal()
 
 
 
