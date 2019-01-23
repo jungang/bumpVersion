@@ -1,6 +1,5 @@
 export default class Person {
 
-	
 	constructor(str){
 		this.name = str || `jun`
 		console.log('str..........');

@@ -3,18 +3,30 @@
  * Created by jg on 2019.1.21.0021.
  */
 
-import Person from "./person.js"
-import Build,{b,fun} from "./Build.js"
+
+import Build from "./Build.js"
+import Calculate from "./calculateClass.js"
 
 $(function () {
 
+	let args = {
+		jsonCircles:[
+			{"x_axis":30,"y_axis":30,"radius":20,"color":"greeen"},
+			{"x_axis":70,"y_axis":70,"radius":20,"color":"purple"},
+			{"x_axis":110,"y_axis":100,"radius":20,"color":"red"}
+		],
+		width:500,
+		height:500
+	};
 
-	let build = new Build()
-	build.build();
 
-	console.log(b);
-	console.log(fun);
-	fun()
+	let build = new Build(args);
+	build.generate();
+
+	let c1 = new Calculate();
+
+
+
 
 
 
