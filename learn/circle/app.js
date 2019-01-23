@@ -4,21 +4,26 @@
  */
 
 import Person from "./person.js"
-import App from "./Build.js"
-
+import Build,{b,fun} from "./Build.js"
 
 $(function () {
 
 
-	console.log(App);
-	console.log(App.jsonCircles);
+	let build = new Build()
+	build.build();
 
-	// let app = new App()
+	console.log(b);
+	console.log(fun);
+	fun()
 
 
-	let p1 = new Person()
+
+
+
+/*	let p1 = new Person()
+	console.log(p1);
+	
 	p1.sayName()
-
 	let p2 = new Person(`jungang`)
-	p2.sayName()
+	p2.sayName()*/
 })
