@@ -57,12 +57,8 @@ class Calculate {
 		let axis = axis_11.concat(axis_10).concat(axis_00).concat(axis_01)
 		console.log(axis);
 
-
-
 		return axis
 	}
-
-
 
 }
 
