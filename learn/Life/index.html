@@ -30,7 +30,7 @@
 </section>
 <svg width='796' height='448'></svg>
 
-<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="d3.js"></script>
 <script src="goL.js"></script>
 <script src="goL games.js"></script>
 
@@ -63,7 +63,9 @@
 		.enter().append("option").attr("value",function(d){ return d;})
 		.text(function(d){return d;});
 
-	goL.setGrid(games.Planes);
-	startUniv();
+	console.log(games.Planes);
+	
+//	goL.setGrid(games['Symm 4']);
+//	startUniv();
 
 </script>
