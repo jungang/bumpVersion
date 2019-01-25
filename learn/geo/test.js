@@ -28,21 +28,53 @@ function GetDistance(lat1,lng1,lat2,lng2){
 
 //随机生成
 
-	Math.random()*100;
+
+let t1,t2,t3,t4,t5,arr
+
+let date = new Date();
+
+
+
+t1 = date.getTime()
 
 let n=100;
-let arr = []
-for(let i=1;i<=n;i++){
-	arr.push([Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100])
+
+async function time() {
+	return Promise.resolve(date.getTime());
 }
 
-console.log(arr);
+function creatArr() {
+	let _arr=[];
+	for(let i=1;i<=n;i++){
+		_arr.push([Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100])
+	}
+	return Promise.resolve(_arr)
+}
+
+
+
+
+function getSomething() {
+	return "something";
+}
+
+async function testAsync() {
+	return Promise.resolve("hello async");
+}
+
+async function test() {
+	arr = await creatArr();
+	 t2 =  await time()
+	console.log(t2);
+}
+
+test()
+// console.log(t1);
+// console.log(t2 - t1);
+
 
 
 /*
-
-
-
 
 console.log(GetDistance(39.9047253699,116.4072154982,39.9058180036,116.4197524695));
 console.log(GetDistance(39.9047253699,116.4072154982,39.8818156775,116.4464950562));
