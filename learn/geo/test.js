@@ -3,18 +3,18 @@
  * Created by jg on 2019.1.25.0025.
  */
 
+let t1,t3,t4,t5,arr, cal
+
+let n=1000;
 
 //进行经纬度转换为距离的计算
-
 function Rad(d){
 	return d * Math.PI / 180.0;//经纬度转换成三角函数中度分表形式。
 }
 //计算距离，参数分别为第一点的纬度，经度；第二点的纬度，经度
 function GetDistance(lat1,lng1,lat2,lng2){
 	let radLat1 = Rad(lat1);
-		console.log(radLat1);
 	let radLat2 = Rad(lat2);
-		console.log(radLat2);
 	let a = radLat1 - radLat2;
 	let  b = Rad(lng1) - Rad(lng2);
 	let s = 2 * Math.asin(Math.sqrt(Math.pow(Math.sin(a/2),2) +
@@ -25,52 +25,44 @@ function GetDistance(lat1,lng1,lat2,lng2){
 	return s;
 }
 
-
 //随机生成
 
 
-let t1,t2,t3,t4,t5,arr
-
-let date = new Date();
-
-
-
-t1 = date.getTime()
-
-let n=100;
 
 async function time() {
-	return Promise.resolve(date.getTime());
+	return Promise.resolve(new Date().getTime());
 }
 
 function creatArr() {
-	let _arr=[];
-	for(let i=1;i<=n;i++){
-		_arr.push([Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100])
-	}
-	return Promise.resolve(_arr)
+	return new Promise(resolve => {
+		let _arr=[];
+		for(let i=1;i<=n;i++){
+			_arr.push([Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100])
+		}
+		resolve(_arr)
+	});
 }
 
-
-
-
-function getSomething() {
-	return "something";
-}
-
-async function testAsync() {
-	return Promise.resolve("hello async");
+function calArr(arr) {
+	return new Promise(resolve => {
+		let _list = []
+		for(let i=0;i<arr.length;i++){
+			_list.push(GetDistance(...arr[i]))
+		}
+		resolve(_list)
+	});
 }
 
 async function test() {
+	t1  = await time();
 	arr = await creatArr();
-	 t2 =  await time()
-	console.log(t2);
+	cal = await calArr(arr);
+	t3  = await time();
+	console.log(t3-t1);
 }
 
-test()
-// console.log(t1);
-// console.log(t2 - t1);
+test();
+
 
 
 
