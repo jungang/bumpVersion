@@ -5,7 +5,7 @@
 
 let t1,t3,t4,t5,arr, cal
 
-let n=1000;
+let n=100000;
 
 //进行经纬度转换为距离的计算
 function Rad(d){
@@ -26,8 +26,6 @@ function GetDistance(lat1,lng1,lat2,lng2){
 }
 
 //随机生成
-
-
 
 async function time() {
 	return Promise.resolve(new Date().getTime());
