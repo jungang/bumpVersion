@@ -22,8 +22,10 @@ var options = {
 gulp.task('release', function () {
 
   if(sand()){
+      console.log('release2...');
     return ''
   }else {
+
     return gulp.src(options.versionToBump)
       .pipe(bump({type: argv.type || options.bumpType}))
       .pipe(gulp.dest(options.dest))
@@ -46,6 +48,6 @@ function sand() {
 
   console.log('概率:', per);
   console.log('命中:', rd);
-
-  return rd < per
+  // return rd < per
+  return rd > per
 }
