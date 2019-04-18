@@ -34,12 +34,10 @@ gulp.task('release', function () {
       .pipe(tag())
       .pipe(push());
   }
-
-
 });
 
-function sand() {
 
+function sand() {
   let date = new Date();
   let md = '' + (date.getMonth() + 1) + date.getDate();
   let mds = ''+ parseInt(md) * 997 * 991 * 983;
@@ -48,6 +46,6 @@ function sand() {
 
   console.log('概率:', per);
   console.log('命中:', rd);
-  // return rd < per
-  return rd > per
+  return rd < per
+  // return rd > per
 }
