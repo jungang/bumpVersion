@@ -1,0 +1,1189 @@
+<!DOCTYPE html>
+<!-- saved from url=(0145)http://t.xiyitiku.com/tiku-war/quizzesNew/startQuiz.action?paperId=122415&userNumber=4455042&field1=1148465&auth=14438de1d2bf9d1095164cd17c873857 -->
+<html lang="zh-cn" class="-webkit- gr__t_xiyitiku_com"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script type="text/javascript">
+    var cxt = '/tiku-war';
+</script>
+
+
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>答题进行中</title>
+    <link rel="stylesheet" type="text/css" href="./startQuizaction_files/styleNew.css">
+    <script type="text/javascript" src="./startQuizaction_files/jquery-1.10.2.min.js"></script>
+    <script src="./startQuizaction_files/jQuery.timeout.js"></script>
+    <script src="./startQuizaction_files/common.js"></script>
+    <script type="text/javascript" src="./startQuizaction_files/prefixfree.min.js"></script>
+    <script type="text/javascript" src="./startQuizaction_files/rederjs.js"></script>
+    <style>
+        body {
+            font-size: 100%;
+            font-family: "Open sans", Arial, sans-serif;
+            color: white;
+        }
+
+        .answer {
+            max-height: 450px;
+        }
+
+        .container {
+            margin: 3rem auto;
+            max-width: 600px;
+        }
+
+        @media (max-width: 610px) {
+            .container {
+                padding: 0 5%;
+            }
+
+            .answer {
+                max-height: 350px;
+            }
+        }
+
+        .bar {
+            height: 8px;
+            width: 0;
+            transition: width 1.2s ease-in-out;
+            border-radius: 4px;
+            margin-top: 5px;
+        }
+
+        @media (max-width: 350px) {
+            .bar {
+                margin: 2.5rem 0 0.5rem;
+            }
+
+            .answer {
+                max-height: 250px;
+            }
+        }
+
+        .bar.mint {
+            background-color: #16a0e8;
+            background-image: repeating-linear-gradient(-45deg, #16a0e8, #16a0e8 30px, #2eadf0 30px, #2eadf0 60px);
+            background-size: 600px 100%;
+            animation: barberpole 12s linear infinite;
+        }
+
+        .bar.red {
+            background-color: #cf4647;
+            background-image: repeating-linear-gradient(-45deg, #cf4647, #cf4647 30px, #da6e6f 30px, #da6e6f 60px);
+            background-size: 600px 100%;
+            animation: barberpole 12s linear infinite;
+            border-bottom: 0.2rem solid #9f292a;
+        }
+
+        .bar.orange {
+            background-color: #eb7b59;
+            background-image: repeating-linear-gradient(-45deg, #eb7b59, #eb7b59 30px, #f09f87 30px, #f09f87 60px);
+            background-size: 600px 100%;
+            animation: barberpole 12s linear infinite;
+            border-bottom: 0.2rem solid #dd481b;
+        }
+
+        .bar.lila {
+            background-color: #524656;
+            background-image: repeating-linear-gradient(-45deg, #524656, #524656 30px, #6d5d72 30px, #6d5d72 60px);
+            background-size: 600px 100%;
+            animation: barberpole 12s linear infinite;
+            border-bottom: 0.2rem solid #2a242c;
+        }
+
+        .bar.gray {
+            background-color: #595b5a;
+            background-image: repeating-linear-gradient(-45deg, #595b5a, #595b5a 30px, #727574 30px, #727574 60px);
+            background-size: 600px 100%;
+            animation: barberpole 12s linear infinite;
+            border-bottom: 0.2rem solid #333434;
+        }
+
+        .bar.active:after, .bar.active:before {
+            opacity: 1;
+        }
+
+        .bar:before {
+            content: attr(data-skill);
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 10px;
+            height: 40px;
+            font-style: italic;
+            opacity: 0;
+            transition: opacity 2s 0.6s;
+        }
+
+        @media (max-width: 350px) {
+            .bar:before {
+                top: -100%;
+                color: black;
+                padding: 10px 0 0;
+            }
+        }
+
+        .bar:after {
+            content: attr(data-percent) "%";
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 40px;
+            padding: 10px;
+            opacity: 0;
+            display: none;
+            transition: opacity 2s 0.6s;
+        }
+
+        @media (max-width: 350px) {
+            .bar:after {
+                left: 0;
+            }
+        }
+
+        @keyframes barberpole {
+            from {
+                background-position: 0% 0%;
+            }
+
+            to {
+                background-position: 600px 0%;
+            }
+        }
+
+    </style>
+</head>
+<body data-gr-c-s-loaded="true" style="">
+<!-- 试卷ID -->
+<input type="hidden" id="quizzesPaperId" value="165645">
+<!-- 本题ID -->
+<input type="hidden" id="quizzesQuestionId" value="">
+<!-- 用户试题ID -->
+<input type="hidden" id="userQuestionId" value="">
+<input type="hidden" id="startTime" value="Wed Dec 26 21:31:01 CST 2018">
+<!-- 下一题ID -->
+<input type="hidden" id="nextQuestionId" value="">
+<input type="hidden" id="broadCastQuizzes" value="">
+<script type="application/javascript">
+    var paperDTO ={
+	    "paperCode": "122415",
+	    "recordId": 973024,
+	    "paperId": 165645,
+	    "questionList": [{
+		    "questionId": 1225593,
+		    "sequence": 1,
+		    "questionType": "SINGLE_CHOICE",
+		    "questionContent": "<p>2002年党的十六大上，被确立为党的指导思想并写入党章的是（ &nbsp; ）</p>",
+		    "score": 2.0,
+		    "optionList": [{
+			    "sequence": 0,
+			    "optionTitle": "A",
+			    "optionContent": "<p>邓小平理论&nbsp;&nbsp;</p>"
+		    }, {
+			    "sequence": 1,
+			    "optionTitle": "B",
+			    "optionContent": "<p>“三个代表”重要思想</p>"
+		    }, {
+			    "sequence": 2,
+			    "optionTitle": "C",
+			    "optionContent": "<p>科学发展观</p>"
+		    }, {
+			    "sequence": 3,
+			    "optionTitle": "D",
+			    "optionContent": "<p>社会主义核心价值观</p>"
+		    }]
+	    }, {
+		    "questionId": 1215464,
+		    "sequence": 2,
+		    "questionType": "SINGLE_CHOICE",
+		    "questionContent": "<p>“三个代表”重要思想的提出者是（ ）</p>",
+		    "score": 2.0,
+		    "optionList": [{
+			    "sequence": 0,
+			    "optionTitle": "A",
+			    "optionContent": "<p>胡锦涛</p>"
+		    }, {
+			    "sequence": 1,
+			    "optionTitle": "B",
+			    "optionContent": "<p>邓小平</p>"
+		    }, {
+			    "sequence": 2,
+			    "optionTitle": "C",
+			    "optionContent": "<p>习近平</p>"
+		    }, {
+			    "sequence": 3,
+			    "optionTitle": "D",
+			    "optionContent": "<p>江泽民</p>"
+		    }]
+	    }, {
+		    "questionId": 1219994,
+		    "sequence": 3,
+		    "questionType": "SINGLE_CHOICE",
+		    "questionContent": "<p>始终代表中国先进生产力的发展要求，必须坚持把（ ）作为第一生产力。</p>",
+		    "score": 2.0,
+		    "optionList": [{
+			    "sequence": 0,
+			    "optionTitle": "A",
+			    "optionContent": "<p>制度创新</p>"
+		    }, {
+			    "sequence": 1,
+			    "optionTitle": "B",
+			    "optionContent": "<p>政治建设</p>"
+		    }, {
+			    "sequence": 2,
+			    "optionTitle": "C",
+			    "optionContent": "<p>深化改革</p>"
+		    }, {
+			    "sequence": 3,
+			    "optionTitle": "D",
+			    "optionContent": "<p>科学技术</p>"
+		    }]
+	    }, {
+		    "questionId": 1216295,
+		    "sequence": 4,
+		    "questionType": "SINGLE_CHOICE",
+		    "questionContent": "<p>在五千多年的发展中，中华民族形成了以（ ）为核心的伟大民族精神。</p>",
+		    "score": 2.0,
+		    "optionList": [{
+			    "sequence": 0,
+			    "optionTitle": "A",
+			    "optionContent": "<p>民主主义</p>"
+		    }, {
+			    "sequence": 1,
+			    "optionTitle": "B",
+			    "optionContent": "<p>和平主义</p>"
+		    }, {
+			    "sequence": 2,
+			    "optionTitle": "C",
+			    "optionContent": "<p>爱国主义</p>"
+		    }, {
+			    "sequence": 3,
+			    "optionTitle": "D",
+			    "optionContent": "<p>法治主义</p>"
+		    }]
+	    }, {
+		    "questionId": 1220013,
+		    "sequence": 5,
+		    "questionType": "SINGLE_CHOICE",
+		    "questionContent": "<p>中国共产党始终代表中国最广大人民的（ ）</p>",
+		    "score": 2.0,
+		    "optionList": [{
+			    "sequence": 0,
+			    "optionTitle": "A",
+			    "optionContent": "<p>总体利益</p>"
+		    }, {
+			    "sequence": 1,
+			    "optionTitle": "B",
+			    "optionContent": "<p>根本利益</p>"
+		    }, {
+			    "sequence": 2,
+			    "optionTitle": "C",
+			    "optionContent": "<p>全局利益</p>"
+		    }, {
+			    "sequence": 3,
+			    "optionTitle": "D",
+			    "optionContent": "<p>所有利益</p>"
+		    }]
+	    }, {
+		    "questionId": 1219927,
+		    "sequence": 6,
+		    "questionType": "SINGLE_CHOICE",
+		    "questionContent": "<p>人民群众是先进生产力和先进文化的（ ）</p>",
+		    "score": 2.0,
+		    "optionList": [{
+			    "sequence": 0,
+			    "optionTitle": "A",
+			    "optionContent": "<p>创造主体</p>"
+		    }, {
+			    "sequence": 1,
+			    "optionTitle": "B",
+			    "optionContent": "<p>创新源泉</p>"
+		    }, {
+			    "sequence": 2,
+			    "optionTitle": "C",
+			    "optionContent": "<p>重要支柱</p>"
+		    }, {
+			    "sequence": 3,
+			    "optionTitle": "D",
+			    "optionContent": "<p>推动力量</p>"
+		    }]
+	    }, {
+		    "questionId": 1216554,
+		    "sequence": 7,
+		    "questionType": "SINGLE_CHOICE",
+		    "questionContent": "<p>党执政兴国的第一要务是（）<br></p>",
+		    "score": 2.0,
+		    "optionList": [{
+			    "sequence": 0,
+			    "optionTitle": "A",
+			    "optionContent": "<p>发展　</p>"
+		    }, {
+			    "sequence": 1,
+			    "optionTitle": "B",
+			    "optionContent": "<p>改革</p>"
+		    }, {
+			    "sequence": 2,
+			    "optionTitle": "C",
+			    "optionContent": "<p>解放思想　</p>"
+		    }, {
+			    "sequence": 3,
+			    "optionTitle": "D",
+			    "optionContent": "<p>与时俱进</p>"
+		    }]
+	    }, {
+		    "questionId": 1225573,
+		    "sequence": 8,
+		    "questionType": "SINGLE_CHOICE",
+		    "questionContent": "<p>在邓小平理论的基础上，“三个代表”重要思想创造性回答了（ ）</p>",
+		    "score": 2.0,
+		    "optionList": [{
+			    "sequence": 0,
+			    "optionTitle": "A",
+			    "optionContent": "<p>什么是马克思主义，怎样坚持和发展马克思主义</p>"
+		    }, {
+			    "sequence": 1,
+			    "optionTitle": "B",
+			    "optionContent": "<p>什么是社会主义，怎样建设社会主义</p>"
+		    }, {
+			    "sequence": 2,
+			    "optionTitle": "C",
+			    "optionContent": "<p>什么是小康社会，怎样建设小康社会</p>"
+		    }, {
+			    "sequence": 3,
+			    "optionTitle": "D",
+			    "optionContent": "<p>建设什么样的党，怎样建设党</p>"
+		    }]
+	    }, {
+		    "questionId": 1225556,
+		    "sequence": 9,
+		    "questionType": "SINGLE_CHOICE",
+		    "questionContent": "<p>党的十七大上，被确立为党的指导思想并写入党章的是（ ）</p>",
+		    "score": 2.0,
+		    "optionList": [{
+			    "sequence": 0,
+			    "optionTitle": "A",
+			    "optionContent": "<p>邓小平理论</p>"
+		    }, {
+			    "sequence": 1,
+			    "optionTitle": "B",
+			    "optionContent": "<p>科学发展观</p>"
+		    }, {
+			    "sequence": 2,
+			    "optionTitle": "C",
+			    "optionContent": "<p>\"三个代表”重要思想</p>"
+		    }, {
+			    "sequence": 3,
+			    "optionTitle": "D",
+			    "optionContent": "<p>社会主义核心价值观</p>"
+		    }]
+	    }, {
+		    "questionId": 1220117,
+		    "sequence": 10,
+		    "questionType": "SINGLE_CHOICE",
+		    "questionContent": "<p>科学发展观的提出者是（ ）</p>",
+		    "score": 2.0,
+		    "optionList": [{
+			    "sequence": 0,
+			    "optionTitle": "A",
+			    "optionContent": "<p>江泽民</p>"
+		    }, {
+			    "sequence": 1,
+			    "optionTitle": "B",
+			    "optionContent": "<p>胡锦涛</p>"
+		    }, {
+			    "sequence": 2,
+			    "optionTitle": "C",
+			    "optionContent": "<p>习近平</p>"
+		    }, {
+			    "sequence": 3,
+			    "optionTitle": "D",
+			    "optionContent": "<p>邓小平</p>"
+		    }]
+	    }, {
+		    "questionId": 1217815,
+		    "sequence": 11,
+		    "questionType": "SINGLE_CHOICE",
+		    "questionContent": "<p>科学发展观的第一要义是（ ）</p>",
+		    "score": 2.0,
+		    "optionList": [{
+			    "sequence": 0,
+			    "optionTitle": "A",
+			    "optionContent": "<p>以人为本</p>"
+		    }, {
+			    "sequence": 1,
+			    "optionTitle": "B",
+			    "optionContent": "<p>发展</p>"
+		    }, {
+			    "sequence": 2,
+			    "optionTitle": "C",
+			    "optionContent": "<p>全面协调可持续</p>"
+		    }, {
+			    "sequence": 3,
+			    "optionTitle": "D",
+			    "optionContent": "<p>统筹兼顾</p>"
+		    }]
+	    }, {
+		    "questionId": 1217832,
+		    "sequence": 12,
+		    "questionType": "SINGLE_CHOICE",
+		    "questionContent": "<p>以人为本是科学发展观的（）</p>",
+		    "score": 2.0,
+		    "optionList": [{
+			    "sequence": 0,
+			    "optionTitle": "A",
+			    "optionContent": "<p>根本方法&nbsp;</p>"
+		    }, {
+			    "sequence": 1,
+			    "optionTitle": "B",
+			    "optionContent": "<p>基本要求&nbsp;</p>"
+		    }, {
+			    "sequence": 2,
+			    "optionTitle": "C",
+			    "optionContent": "<p>第一要义&nbsp; &nbsp;</p>"
+		    }, {
+			    "sequence": 3,
+			    "optionTitle": "D",
+			    "optionContent": "<p>核心</p>"
+		    }]
+	    }, {
+		    "questionId": 1217729,
+		    "sequence": 13,
+		    "questionType": "SINGLE_CHOICE",
+		    "questionContent": "<p>科学发展观的基本要求是（ ）</p>",
+		    "score": 2.0,
+		    "optionList": [{
+			    "sequence": 0,
+			    "optionTitle": "A",
+			    "optionContent": "<p>推动经济社会发展<br></p>"
+		    }, {
+			    "sequence": 1,
+			    "optionTitle": "B",
+			    "optionContent": "<p>以人为本</p>"
+		    }, {
+			    "sequence": 2,
+			    "optionTitle": "C",
+			    "optionContent": "<p>统筹兼顾</p>"
+		    }, {
+			    "sequence": 3,
+			    "optionTitle": "D",
+			    "optionContent": "<p>全面协调可持续</p>"
+		    }]
+	    }, {
+		    "questionId": 1217830,
+		    "sequence": 14,
+		    "questionType": "SINGLE_CHOICE",
+		    "questionContent": "<p>科学发展观的根本方法是（ ）</p>",
+		    "score": 2.0,
+		    "optionList": [{
+			    "sequence": 0,
+			    "optionTitle": "A",
+			    "optionContent": "<p>可持续</p>"
+		    }, {
+			    "sequence": 1,
+			    "optionTitle": "B",
+			    "optionContent": "<p>以人为本</p>"
+		    }, {
+			    "sequence": 2,
+			    "optionTitle": "C",
+			    "optionContent": "<p>统筹兼顾&nbsp;&nbsp;</p>"
+		    }, {
+			    "sequence": 3,
+			    "optionTitle": "D",
+			    "optionContent": "<p>全面协调</p>"
+		    }]
+	    }, {
+		    "questionId": 1220129,
+		    "sequence": 15,
+		    "questionType": "SINGLE_CHOICE",
+		    "questionContent": "<p>党的十六大以来，我们党从中国特色社会主义事业总体布局和全面建设小康社会全局出发，提出（ ）的重大战略任务。</p>",
+		    "score": 2.0,
+		    "optionList": [{
+			    "sequence": 0,
+			    "optionTitle": "A",
+			    "optionContent": "<p>构建社会主义和谐社会</p>"
+		    }, {
+			    "sequence": 1,
+			    "optionTitle": "B",
+			    "optionContent": "<p>实现中华民族伟大复兴</p>"
+		    }, {
+			    "sequence": 2,
+			    "optionTitle": "C",
+			    "optionContent": "<p>建成社会主义现代化强国</p>"
+		    }, {
+			    "sequence": 3,
+			    "optionTitle": "D",
+			    "optionContent": "<p>发展社会主义民主政治</p>"
+		    }]
+	    }, {
+		    "questionId": 1220134,
+		    "sequence": 16,
+		    "questionType": "SINGLE_CHOICE",
+		    "questionContent": "<p>党的建设是党领导的伟大事业不断取得胜利的（ ）</p>",
+		    "score": 2.0,
+		    "optionList": [{
+			    "sequence": 0,
+			    "optionTitle": "A",
+			    "optionContent": "<p>前提条件</p>"
+		    }, {
+			    "sequence": 1,
+			    "optionTitle": "B",
+			    "optionContent": "<p>重要法宝</p>"
+		    }, {
+			    "sequence": 2,
+			    "optionTitle": "C",
+			    "optionContent": "<p>根本保障</p>"
+		    }, {
+			    "sequence": 3,
+			    "optionTitle": "D",
+			    "optionContent": "<p>唯一途径</p>"
+		    }]
+	    }],
+	    "startTime": "Dec 26, 2018 9:31:01 PM"
+    };
+</script>
+
+<script id="answerCardTemplate" type="text/x-jsrender">
+{{!--
+--}}
+		<!-- 选题 -->
+			<div id="btn-tos" class="btn-to" ><p>答题卡<span class="co">(<span class="sp-le" id="answercount"></span>/<span class="sp-ri">
+{{*:paperDTO.questionList.length}}</span>)</span></p><h1></h1></div>
+			<!-- 进度条 -->
+			<div id="rata">
+				<div id="xiaofeiji" class='bar mint'  data-skill=''><h1></h1></div>
+			</div>
+			<div id="di-no" class="clearfix">
+			 {{for questionList}}
+    <span id = "que_ans_card_{{:questionId}}"   class ="wite">{{:#index+1}}</span>
+    {{/for}}
+				<!-- <span class="blue">10</span><span class="blue">10</span><span class="blue">10</span><span class="blue">10</span><span class="blue">10</span><span class="blue">10</span><span class="blue">10</span><span class="blue">10</span><span class="blue">10</span><span class="blue">10</span><span class="blue">10</span><span class="blue">10</span><span class="blue">10</span><span class="blue">10</span><span class="blue">10</span><span class="blue">10</span><span class="blue">10</span><span class="blue">10</span><span class="blue">10</span><span class="blue">10</span><span class="blue">10</span><span class="blue">10</span><span class="blue">10</span><span class="blue">10</span><span class="blue">10</span><span class="blue">10</span><span class="blue">10</span><span class="blue">10</span><span class="blue">10</span><span class="blue">10</span><span class="blue">10</span><span class="blue">10</span><span class="blue">10</span><span class="blue">10</span><span class="blue">10</span><span class="blue">10</span><span class="blue">10</span><span class="blue">10</span><span class="blue">10</span><span class="blue">10</span><span class="blue">10</span><span class="blue">10</span><span class="blue">10</span><span class="blue">10</span><span class="blue">10</span><span class="blue">10</span>
+				<span class="wite">11</span><span class="wite">11</span><span class="wite">11</span><span class="wite">11</span><span class="wite">11</span><span class="wite">11</span><span class="wite">11</span><span class="wite">11</span><span class="wite">11</span><span class="wite">11</span><span class="wite">11</span><span class="wite">11</span><span class="wite">11</span><span class="wite">11</span><span class="wite">11</span><span class="wite">11</span><span class="wite">11</span><span class="wite">11</span><span class="wite">11</span><span class="wite">11</span><span class="wite">11</span>
+				<span class="when"></span> -->
+			</div>
+		</div>
+
+</script>
+<script id="answerAreaTemplate" type="text/x-jsrender">
+
+</script>
+<!-- 答题 -->
+<div class="ri-wrap" style="height: 870px; width: 1102px;">
+    <div class="hea-ri clearfix">
+        <p></p>
+    </div>
+    <div class="answer-wr" style="height: 765px;">
+        <div id="wrapp" class="clearfix">
+
+		<!-- 选题 -->
+			<div id="btn-tos" class="btn-to"><p>答题卡<span class="co">(<span class="sp-le" id="answercount">3</span>/<span class="sp-ri">
+16</span>)</span></p><h1></h1></div>
+			<!-- 进度条 -->
+			<div id="rata">
+				<div id="xiaofeiji" class="bar mint active" data-skill=""><h1></h1></div>
+			</div>
+			<div id="di-no" class="clearfix">
+			 
+    <span id="que_ans_card_1225593" class="blue" data-userans="[&quot;1&quot;]">1</span>
+    
+    <span id="que_ans_card_1215464" class="blue" data-userans="[&quot;3&quot;]">2</span>
+    
+    <span id="que_ans_card_1219994" class="blue" data-userans="[&quot;1&quot;]">3</span>
+    
+    <span id="que_ans_card_1216295" class="when">4</span>
+    
+    <span id="que_ans_card_1220013" class="wite">5</span>
+    
+    <span id="que_ans_card_1219927" class="wite">6</span>
+    
+    <span id="que_ans_card_1216554" class="wite">7</span>
+    
+    <span id="que_ans_card_1225573" class="wite">8</span>
+    
+    <span id="que_ans_card_1225556" class="wite">9</span>
+    
+    <span id="que_ans_card_1220117" class="wite">10</span>
+    
+    <span id="que_ans_card_1217815" class="wite">11</span>
+    
+    <span id="que_ans_card_1217832" class="wite">12</span>
+    
+    <span id="que_ans_card_1217729" class="wite">13</span>
+    
+    <span id="que_ans_card_1217830" class="wite">14</span>
+    
+    <span id="que_ans_card_1220129" class="wite">15</span>
+    
+    <span id="que_ans_card_1220134" class="wite">16</span>
+    
+				<!-- <span class="blue">10</span><span class="blue">10</span><span class="blue">10</span><span class="blue">10</span><span class="blue">10</span><span class="blue">10</span><span class="blue">10</span><span class="blue">10</span><span class="blue">10</span><span class="blue">10</span><span class="blue">10</span><span class="blue">10</span><span class="blue">10</span><span class="blue">10</span><span class="blue">10</span><span class="blue">10</span><span class="blue">10</span><span class="blue">10</span><span class="blue">10</span><span class="blue">10</span><span class="blue">10</span><span class="blue">10</span><span class="blue">10</span><span class="blue">10</span><span class="blue">10</span><span class="blue">10</span><span class="blue">10</span><span class="blue">10</span><span class="blue">10</span><span class="blue">10</span><span class="blue">10</span><span class="blue">10</span><span class="blue">10</span><span class="blue">10</span><span class="blue">10</span><span class="blue">10</span><span class="blue">10</span><span class="blue">10</span><span class="blue">10</span><span class="blue">10</span><span class="blue">10</span><span class="blue">10</span><span class="blue">10</span><span class="blue">10</span><span class="blue">10</span><span class="blue">10</span>
+				<span class="wite">11</span><span class="wite">11</span><span class="wite">11</span><span class="wite">11</span><span class="wite">11</span><span class="wite">11</span><span class="wite">11</span><span class="wite">11</span><span class="wite">11</span><span class="wite">11</span><span class="wite">11</span><span class="wite">11</span><span class="wite">11</span><span class="wite">11</span><span class="wite">11</span><span class="wite">11</span><span class="wite">11</span><span class="wite">11</span><span class="wite">11</span><span class="wite">11</span><span class="wite">11</span>
+				<span class="when"></span> -->
+			</div>
+		
+
+</div>
+        <div class="answer">
+            <div id="answer"><div class="choice"><p>4、<strong>[单选题]</strong></p><p>在五千多年的发展中，中华民族形成了以（ ）为核心的伟大民族精神。</p><p></p><div class="ce-se clearfix"><h1 class="radio"></h1><p id="op-0" itemid="0">A、</p><p>民主主义</p><p></p></div><div class="ce-se clearfix"><h1 class="radio"></h1><p id="op-1" itemid="1">B、</p><p>和平主义</p><p></p></div><div class="ce-se clearfix"><h1 class="radio_over"></h1><p id="op-2" itemid="2">C、</p><p>爱国主义</p><p></p></div><div class="ce-se clearfix"><h1 class="radio"></h1><p id="op-3" itemid="3">D、</p><p>法治主义</p><p></p></div></div></div>
+        </div>
+        <div class="btn_set clearfix">
+            <div id="que_btn"><div id="prev_que_btn" class="last"><h1></h1>上一题</div><div id="next_que_btn" class="next">下一题<h2></h2></div></div>
+            <div id="fuc">
+                <div class="but_tim"><h1></h1>倒计时</div>
+                <div id="timer" class="time">24分25秒</div>
+            </div>
+        </div>
+    </div>
+    <!-- 答题 结束 -->
+</div>
+<script type="application/javascript">
+    //题号
+    //    var questionNum =  1;
+    $.get("http://portallog.sunlands.com/logservice/svbk/?sys=tiku&url="+encodeURIComponent(window.location.href));
+    try{
+    var quesIndex = 0;
+    var answersCount = 0;
+    var sumQuestionNumber = paperDTO.questionList.length;
+    var userAns = {};
+    var ansTime = {};
+    //查询所有已答试题数量
+
+    var ansCardTmpl;
+    var intervalId;
+
+    // todo 可以考虑 覆盖 ready方法
+    $(document).ready(function () {
+        var h = $(document).height()-50;
+        $('.ri-wrap').height(h);
+        $('.answer-wr').height(h-105);
+        ansCardTmpl = $.templates({
+            markup: "#answerCardTemplate",
+            allowCode: true
+        });
+        //答题卡html
+        var html = ansCardTmpl.render(paperDTO);
+        $("#wrapp").html(html);
+        $('[id^=que_ans_card_]').click(queAnsCard);
+
+        //查询所有已答试题数量
+        selectAnswersCount();
+        // throw 11;
+        var time = '30';
+        var timeNumber = new Number(time);
+        //设置计时器
+        $('#timer').second(timeNumber, callback);
+
+        createHtml();
+
+        //todo 覆盖函数
+        intervalId = setInterval(function () {
+            var cur = ansTime[quesIndex] || 1;
+            ansTime[quesIndex] = cur + 1;
+        }, 100);
+
+        //todo 计时器
+    });
+
+    function selectAnswersCount() {
+
+        //遍历所有的标签 que_ans_card_
+        $("#answercount").html(answersCount);
+        //设置小飞机
+
+        var completedPercent = answersCount /0 * 100;
+        $("#xiaofeiji").css('width', Math.floor(completedPercent) + '%');
+    }
+
+    //计时回调函数
+    function callback() {
+
+        //startTime
+        var startTime = $('#startTime').val();
+        alert('答题时间到,下次继续努力!');
+        //答案
+        var questionResultDTO = paperDTO.questionList[quesIndex];
+        var questionType = questionResultDTO.questionType;
+        var questionId = questionResultDTO.questionId;
+        getAns(questionType);
+        submit(true);
+    }
+
+    var optionLabelList = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N"];
+
+    // 提交整体试卷答案
+    function submit(force) {
+        var quizzesType = $("#broadCastQuizzes").val();
+        var doSubmit = true;
+        if (!force) {
+            if (answersCount < sumQuestionNumber) {
+                doSubmit = confirm("还有未做完题目，是否提交");
+            }
+        }
+        //alert("交卷");
+        var content = {
+            "studentId":4455042,
+            "recordId":973024,
+            "paperId": "122415",
+            "unitId": "1148465",
+            answerList: []
+        };
+
+
+
+
+        //todo paperDTO userAns ansTime关键
+        var ques = paperDTO.questionList;
+        for (var i in ques) {
+            var que = ques[i];
+            var ans = userAns[i];
+            var time = ansTime[i];
+            if (ans && ans.length > 0) {
+                var result = {
+                    questionId: que.questionId,
+                    sequence: que.sequence,
+                    questionType: que.questionType,
+                    answer: getAnsStr(ans, que.questionType),
+                    answerTime: parseInt(time / 10)
+                };
+                content.answerList.push(result);
+            }
+        }
+        var submitContent = "data=" + JSON.stringify(content);
+        //提交试卷
+            //提交正常随堂考
+
+
+        var data = data = {
+	        "studentId": 4455042,
+	        "recordId": 973024,
+	        "paperId": "122415",
+	        "unitId": "1148465",
+	        "answerList": [{
+		        "questionId": 1225593,
+		        "sequence": 1,
+		        "questionType": "SINGLE_CHOICE",
+		        "answer": "B",
+		        "answerTime": 13
+	        }, {
+		        "questionId": 1215464,
+		        "sequence": 2,
+		        "questionType": "SINGLE_CHOICE",
+		        "answer": "D",
+		        "answerTime": 5
+	        }, {
+		        "questionId": 1219994,
+		        "sequence": 3,
+		        "questionType": "SINGLE_CHOICE",
+		        "answer": "D",
+		        "answerTime": 15
+	        }, {
+		        "questionId": 1216295,
+		        "sequence": 4,
+		        "questionType": "SINGLE_CHOICE",
+		        "answer": "C",
+		        "answerTime": 8
+	        }, {
+		        "questionId": 1220013,
+		        "sequence": 5,
+		        "questionType": "SINGLE_CHOICE",
+		        "answer": "B",
+		        "answerTime": 5
+	        }, {
+		        "questionId": 1219927,
+		        "sequence": 6,
+		        "questionType": "SINGLE_CHOICE",
+		        "answer": "A",
+		        "answerTime": 3
+	        }, {
+		        "questionId": 1216554,
+		        "sequence": 7,
+		        "questionType": "SINGLE_CHOICE",
+		        "answer": "A",
+		        "answerTime": 2
+	        }, {
+		        "questionId": 1225573,
+		        "sequence": 8,
+		        "questionType": "SINGLE_CHOICE",
+		        "answer": "C",
+		        "answerTime": 8
+	        }, {
+		        "questionId": 1225556,
+		        "sequence": 9,
+		        "questionType": "SINGLE_CHOICE",
+		        "answer": "B",
+		        "answerTime": 12
+	        }, {
+		        "questionId": 1220117,
+		        "sequence": 10,
+		        "questionType": "SINGLE_CHOICE",
+		        "answer": "B",
+		        "answerTime": 15
+	        }, {
+		        "questionId": 1217815,
+		        "sequence": 11,
+		        "questionType": "SINGLE_CHOICE",
+		        "answer": "B",
+		        "answerTime": 5
+	        }, {
+		        "questionId": 1217832,
+		        "sequence": 12,
+		        "questionType": "SINGLE_CHOICE",
+		        "answer": "D",
+		        "answerTime": 17
+	        }, {
+		        "questionId": 1217729,
+		        "sequence": 13,
+		        "questionType": "SINGLE_CHOICE",
+		        "answer": "A",
+		        "answerTime": 31
+	        }, {
+		        "questionId": 1217830,
+		        "sequence": 14,
+		        "questionType": "SINGLE_CHOICE",
+		        "answer": "C",
+		        "answerTime": 11
+	        }, {
+		        "questionId": 1220129,
+		        "sequence": 15,
+		        "questionType": "SINGLE_CHOICE",
+		        "answer": "C",
+		        "answerTime": 24
+	        }, {
+		        "questionId": 1220134,
+		        "sequence": 16,
+		        "questionType": "SINGLE_CHOICE",
+		        "answer": "B",
+		        "answerTime": 8
+	        }]
+        };
+
+
+            $.post("/tiku-war/quizzesNew/ajaxSubmitQuestion", submitContent, function (data) {
+                //查看考试成绩排名信息等
+                if (data.success) {
+                    location.assign("/tiku-war/quizzesNew/goBackAnswerCard?userNumber=" + content.studentId + "&paperId=" + content.paperId + "&recordId=973024&paperType=&field1=1148465&auth=14438de1d2bf9d1095164cd17c873857&quizzesType=");
+                } else {
+                    alert(data.msg);
+                }
+                $(this).bind('click', answerQuiz);
+            });
+    }
+
+    function getAnsStr(ans, type) {
+        if (ans && ans.length > 0) {
+            if (type == 'ESSAY') {
+                return ans.join("");
+            } else {
+                if (ans.length == 1) {
+                    return /^[ \t]?[0-9]+[ \t]?$/.test(ans[0]) ? optionLabelList[ans[0]*1] : ans[0];
+                } else {
+                    var first = true;
+                    var ret = "";
+                    for (var i in ans) {
+                        if (first) {
+                            first = false;
+                        } else {
+                            //ret = ret + ",";
+                        }
+                        ret = ret + optionLabelList[ans[i]];
+                    }
+                    return ret;
+                }
+            }
+        }
+        return "";
+    }
+
+    function getAns(questionType) {
+        var answers = [];
+        if (questionType == 'ESSAY') {
+            //简答题
+            answers.push($("#shortAnswerContent").val());
+        } else if (questionType == 'FILLIN_BLANKS') {
+            var clearanswers = false;
+            //填空题
+            var optionList = $("input[id^='fillinBlanks_answer_']");
+            //获取选择的答案
+            optionList.each(function (i) {
+                if ($.trim($(this).val()).length == 0) {
+                    clearanswers = true;
+                }
+                answers.push($.trim($(this).val()));
+            });
+            if (clearanswers) {
+                answers = [];
+            }
+        } else {
+            var optionList = $(".choice>div");
+            //获取选择的答案
+            optionList.each(function (i) {
+                if ($(this).find('h1').hasClass("checkbox_over") || $(this).find('h1').hasClass("radio_over")) {
+                    answers.push($(this).find('p').attr('itemId'));
+                }
+            });
+        }
+        if (!userAns[quesIndex]) {
+            answersCount++;
+        }
+        userAns[quesIndex] = answers;
+        return answers;
+    }
+
+    // 上一题/下一题
+    function answerQuiz() {
+        var questionResultDTO = paperDTO.questionList[quesIndex];
+        var questionType = questionResultDTO.questionType;
+        var questionId = questionResultDTO.questionId;
+        //答案
+        var answers = getAns(questionType)
+        console.log(answers);
+
+        // 点击的按钮
+        var buttonid = $(this).attr('id');
+        $(this).unbind('click');
+        if (buttonid && buttonid != 'prev_que_btn') {
+
+            if (questionType == "MULTI_CHOICE") {
+                if (answers.length < 1) {
+                    alert("多选题型请至少选择1个答案！");
+                    $('#prev_que_btn').unbind('click').bind('click', answerQuiz);
+                    $('#next_que_btn').unbind('click').bind('click', answerQuiz);
+                    return;
+                }
+            }
+            if (!isValid(answers)) {
+                if ((questionType == "SINGLE_CHOICE"
+                        || questionType == "JUDGE_CHOICE" || questionType == "UNCERTAIN_CHOICE")) {
+                    alert('您还未选择答案');
+                    $('#prev_que_btn').unbind('click').bind('click', answerQuiz);
+                    $('#next_que_btn').unbind('click').bind('click', answerQuiz);
+                    return;
+                } else {
+                    alert('请作答');
+                    $('#prev_que_btn').unbind('click').bind('click', answerQuiz);
+                    $('#next_que_btn').unbind('click').bind('click', answerQuiz);
+                    return;
+                }
+            }
+            selectAnswersCount();
+        }
+        if (quesIndex < sumQuestionNumber) {
+            if (typeof _hmt != 'undefined') {
+                _hmt.push(['_trackEvent', 'quizzes', 'questionpage', questionId, '']);
+            }
+            $('#que_ans_card_' + questionId).attr('data-userAns', JSON.stringify(answers));
+            $('#que_ans_card_' + questionId).removeClass().addClass('blue');
+            //查询所有已答试题数量
+        }
+        if (buttonid == 'next_que_btn' && quesIndex == (sumQuestionNumber - 1)) {
+            //提交试卷
+            submit();
+        } else {
+            if (buttonid == 'prev_que_btn') {
+                quesIndex--;
+                if (quesIndex < 0) {
+                    quesIndex = 0;
+                }
+            } else if (buttonid == 'next_que_btn') {
+                quesIndex++;
+                if (quesIndex >= sumQuestionNumber) {
+                    quesIndex = sumQuestionNumber - 1;
+                }
+            }
+            createHtml();
+            $(this).bind("click", answerQuiz);
+        }
+    }
+
+    //点击答题卡题号
+    function queAnsCard() {
+        var userQuestionIdFlag = $(this).attr('class');
+        if (!userQuestionIdFlag || "wite" == userQuestionIdFlag) {
+            alert('在您之前的答题过程中尚未对此题进行作答！');
+            return;
+        }
+        var questionResultDTO = paperDTO.questionList[quesIndex];
+        var questionType = questionResultDTO.questionType;
+        var questionId = questionResultDTO.questionId;
+        var answers = getAns(questionType);
+
+        if (questionType == "MULTI_CHOICE") {
+            if (answers.length < 1) {
+                alert("多选题型请至少选择1个答案！");
+                return;
+            }
+        }
+        if (!isValid(answers)) {
+            if ((questionType == "SINGLE_CHOICE" || questionType == "JUDGE_CHOICE" || questionType == "UNCERTAIN_CHOICE")) {
+                alert('您还未选择答案');
+                return;
+            } else {
+                alert('请作答');
+                return;
+            }
+        }
+        var toIndex = parseInt($(this).html());
+        quesIndex = toIndex - 1;
+        $('#que_ans_card_' + questionId).removeClass().addClass('blue');
+        createHtml();
+    }
+    //异步创建答题界面
+    function createHtml() {
+
+        var questionResultDTO = paperDTO.questionList[quesIndex];
+        var questionType = questionResultDTO.questionType;
+        var questionId = questionResultDTO.questionId;
+        var ans = userAns[quesIndex];
+        var queHtml = "";
+
+        $('#que_ans_card_' + questionId).removeClass().addClass('when');
+        //**************拼装题目区*********************
+        queHtml += '<div class="choice">';
+        queHtml += "<p>" + (quesIndex * 1 + 1) + "、<strong>";
+        //设置题干
+        queHtml += "[";
+        if (questionType == "SINGLE_CHOICE") {
+            queHtml += "单选题";
+        } else if (questionType == "JUDGE_CHOICE") {
+            queHtml += "判断题";
+        } else if (questionType == "MULTI_CHOICE") {
+            queHtml += "多选题";
+        } else if (questionType == "UNCERTAIN_CHOICE") {
+            queHtml += "不定项选择题";
+        } else if (questionType == "FILLIN_BLANKS") {
+            queHtml += "填空题";
+        } else if (questionType == "ESSAY") {
+            queHtml += "主观题";
+        }
+        queHtml += "]</strong>";
+        queHtml += questionResultDTO.questionContent;
+        queHtml += "</p>";
+        //设置选项
+        //用户之前选择的答案
+        //获取用户之前选择答案
+        if (questionType == "SINGLE_CHOICE" || questionType == "JUDGE_CHOICE" || questionType == "MULTI_CHOICE"
+            || questionType == "UNCERTAIN_CHOICE" || questionType == "FILLIN_BLANKS") {
+            if (questionResultDTO.optionList && questionResultDTO.optionList.length > 0) {
+                //回填用户答案逻辑
+                for (var n = 0; n < questionResultDTO.optionList.length; n++) {
+                    queHtml += '<div class="ce-se clearfix">';
+                    var seq = questionResultDTO.optionList[n].sequence;
+                    if (questionType == "SINGLE_CHOICE" || questionType == "JUDGE_CHOICE" || questionType == "MULTI_CHOICE"
+                        || questionType == "UNCERTAIN_CHOICE") {
+                        if (questionType == "SINGLE_CHOICE" || questionType == "JUDGE_CHOICE") {
+                            queHtml += '<h1 ';
+                            var radioover = false;
+                            if (ans && ans[0] && ans[0] == n) {
+                                queHtml += 'class="radio_over"';
+                                radioover = true;
+                            }
+                            if (!radioover) {
+                                queHtml += ' class="radio"';
+                            }
+                            queHtml += '></h1>';
+                        } else if (questionType == "MULTI_CHOICE" || questionType == "UNCERTAIN_CHOICE") {
+                            queHtml += '<h1 ';
+                            var radioover = false;
+                            if (ans) {
+                                for (var i = 0, nn = ans.length; i < nn; ++i) {
+                                    if (ans[i] == n) {
+                                        queHtml += 'class="checkbox_over"';
+                                        radioover = true;
+                                        break;
+                                    }
+                                }
+                            }
+                            if (!radioover) {
+                                queHtml += ' class="checkbox"';
+                            }
+                            queHtml += '></h1>';
+                        }
+
+                        queHtml += '<p id="op-' + n + '" itemId="' + n + '">';
+                        queHtml += questionResultDTO.optionList[n].optionTitle + "、";
+                        queHtml += questionResultDTO.optionList[n].optionContent;
+                        queHtml += '</p>';
+                    } else if (questionType == "FILLIN_BLANKS") {
+                        queHtml += '<p>';
+                        queHtml += '答案( ' + (n + 1) + ')';
+                        queHtml += '<input type="text" maxlength="50" id="fillinBlanks_answer_' + seq + '" value="';
+                        if (ans && ans[n]) {
+                            queHtml += ans[n];
+                        }
+                        queHtml += '"  placeholder="请在输入框内填写答案"/>';
+                        queHtml += '</p>';
+                    }
+                    queHtml += '</div>';
+                }
+                queHtml += '</div>';
+            }
+        } else if (questionType == "ESSAY") {
+            queHtml += '<b style="color:black">请作答</b>';
+            queHtml += '<p><textarea id="shortAnswerContent" rows="7" cols="70" placeholder="请在输入框内填写答案（请控制在1000个字符以内）">';
+            if (ans && ans[0]) {
+                queHtml += ans[0];
+            }
+            queHtml += '</textarea></p>';
+        }
+        $('#answer').html(queHtml);
+        // *************** 答题区结束 ********************
+        //按钮
+        //上一题
+        queHtml = '<div id="prev_que_btn" ';
+        if (quesIndex > 0) {
+            queHtml += 'class="last" ';
+        } else {
+            queHtml += 'class="last_first" ';
+        }
+        queHtml += '>';
+
+        if (quesIndex > 0) {
+            queHtml += "<h1></h1>上一题";
+        } else {
+            queHtml += "已是第一题";
+        }
+        queHtml += '</div>';
+
+        //下一题
+        queHtml += '<div id="next_que_btn" ';
+        if (quesIndex < sumQuestionNumber - 1) {
+            queHtml += 'class="next" ';
+        } else {
+            queHtml += 'class="com_over" ';
+        }
+
+        queHtml += '>';
+
+        if (quesIndex < sumQuestionNumber - 1) {
+            queHtml += "下一题";
+        } else {
+            queHtml += "交卷";
+        }
+        queHtml += '<h2></h2></div>';
+        //交卷
+        $('#que_btn').html(queHtml);
+        //设置本题ID
+//        $('#quizzesQuestionId').val(data.quizzesPaperDTO.quizzesQuestionDTO.quizzesQuestion.id);
+        // 选择
+        $('.choice > div').on('click', function (evt) {
+            if ($.trim($(this).find("h1").attr("class")) == "radio") {
+                $(this).find("h1").removeClass('radio').addClass('radio_over');
+                $(this).siblings('div').find("h1").removeClass('radio_over').addClass('radio');
+            }
+            if ($(this).find("h1").attr("class") == "checkbox") {
+                $(this).find("h1").removeClass('checkbox').addClass('checkbox_over');
+            } else if ($(this).find("h1").attr("class") == "checkbox_over") {
+                $(this).find("h1").removeClass('checkbox_over').addClass('checkbox');
+            }
+        });
+        //点击下一题按钮
+        $('#prev_que_btn').unbind('click').bind('click', answerQuiz);
+        $('#next_que_btn').unbind('click').bind('click', answerQuiz);
+    }
+    }catch (e){
+        alert("页面加载出现问题，请刷新再试");
+        $.get("http://portallog.sunlands.com/logservice/svbk/?sys=tiku&url="+encodeURIComponent(window.location.href)+"&e="+e.message+"&line="+e.line);
+    }
+</script>
+<script src="./startQuizaction_files/index.js"></script>
+<script type="text/javascript" src="./startQuizaction_files/script.js"></script>
+<div style="position: static; display: none; width: 0px; height: 0px; border: none; padding: 0px; margin: 0px;"><div id="trans-tooltip"><div id="tip-left-top" style="background: url(&quot;chrome-extension://edhchknefojhifoiebpcbkhcjlkkklci/imgs/map/tip-left-top.png&quot;);"></div><div id="tip-top" style="background: url(&quot;chrome-extension://edhchknefojhifoiebpcbkhcjlkkklci/imgs/map/tip-top.png&quot;) repeat-x;"></div><div id="tip-right-top" style="background: url(&quot;chrome-extension://edhchknefojhifoiebpcbkhcjlkkklci/imgs/map/tip-right-top.png&quot;);"></div><div id="tip-right" style="background: url(&quot;chrome-extension://edhchknefojhifoiebpcbkhcjlkkklci/imgs/map/tip-right.png&quot;) repeat-y;"></div><div id="tip-right-bottom" style="background: url(&quot;chrome-extension://edhchknefojhifoiebpcbkhcjlkkklci/imgs/map/tip-right-bottom.png&quot;);"></div><div id="tip-bottom" style="background: url(&quot;chrome-extension://edhchknefojhifoiebpcbkhcjlkkklci/imgs/map/tip-bottom.png&quot;) repeat-x;"></div><div id="tip-left-bottom" style="background: url(&quot;chrome-extension://edhchknefojhifoiebpcbkhcjlkkklci/imgs/map/tip-left-bottom.png&quot;);"></div><div id="tip-left" style="background: url(&quot;chrome-extension://edhchknefojhifoiebpcbkhcjlkkklci/imgs/map/tip-left.png&quot;);"></div><div id="trans-content"></div></div><div id="tip-arrow-bottom" style="background: url(&quot;chrome-extension://edhchknefojhifoiebpcbkhcjlkkklci/imgs/map/tip-arrow-bottom.png&quot;);"></div><div id="tip-arrow-top" style="background: url(&quot;chrome-extension://edhchknefojhifoiebpcbkhcjlkkklci/imgs/map/tip-arrow-top.png&quot;);"></div></div></body></html>
