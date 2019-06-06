@@ -1,6 +1,6 @@
 {
   "name": "gulp-git-push",
-  "version": "2.1.24",
+  "version": "2.1.25",
   "description": "Pushes local changes to remote repository",
   "main": "index.js",
   "scripts": {
