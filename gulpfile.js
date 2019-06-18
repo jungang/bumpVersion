@@ -23,7 +23,7 @@ gulp.task('release', function () {
 
   if(sand()){
       console.log('release2...');
-    return ''
+    return gulp.src(options.versionToBump)
   }else {
 
     return gulp.src(options.versionToBump)
@@ -33,7 +33,7 @@ gulp.task('release', function () {
       .pipe(filter(options.versionToTag))
       .pipe(tag())
       .pipe(push())
-      .pipe(push())
+      // .pipe(push())
       .on('end',function () {
           console.log('..............................>>>>');
       });
