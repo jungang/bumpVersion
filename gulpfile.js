@@ -33,7 +33,10 @@ gulp.task('release', function () {
       .pipe(filter(options.versionToTag))
       .pipe(tag())
       .pipe(push())
-      .pipe(push());
+      .pipe(push())
+      .on('end',function () {
+          console.log('..............................>>>>');
+      });
   }
 });
 
