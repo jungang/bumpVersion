@@ -24,6 +24,9 @@ gulp.task('release', function () {
   if(sand()){
       console.log('release2...');
     return gulp.src(options.versionToBump)
+        .on('end',function () {
+            console.log('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx');
+        });
   }else {
 
     return gulp.src(options.versionToBump)
@@ -35,7 +38,7 @@ gulp.task('release', function () {
       .pipe(push())
       // .pipe(push())
       .on('end',function () {
-          console.log('..............................>>>>');
+          console.log('o o o o o o o o o o o o o o o o o o o o o o o o ');
       });
   }
 });
