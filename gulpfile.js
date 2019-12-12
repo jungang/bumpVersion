@@ -22,7 +22,7 @@ var options = {
 gulp.task('release', function () {
 
   if(sand()){
-      console.log('release2...');
+      console.log('取消提交。。。');
     return gulp.src(options.versionToBump)
         .on('end',function () {
             console.log('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx');
