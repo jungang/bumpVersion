@@ -1,0 +1,48 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'C:\\Users\\jg\\AppData\\Roaming\\npm\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'run',
+1 verbose cli   'bump_version_patch_0.0.1' ]
+2 info using npm@4.1.1
+3 info using node@v10.15.3
+4 verbose run-script [ 'prebump_version_patch_0.0.1',
+4 verbose run-script   'bump_version_patch_0.0.1',
+4 verbose run-script   'postbump_version_patch_0.0.1' ]
+5 info lifecycle gulp-git-push@2.2.526~prebump_version_patch_0.0.1: gulp-git-push@2.2.526
+6 silly lifecycle gulp-git-push@2.2.526~prebump_version_patch_0.0.1: no script for prebump_version_patch_0.0.1, continuing
+7 info lifecycle gulp-git-push@2.2.526~bump_version_patch_0.0.1: gulp-git-push@2.2.526
+8 verbose lifecycle gulp-git-push@2.2.526~bump_version_patch_0.0.1: unsafe-perm in lifecycle true
+9 verbose lifecycle gulp-git-push@2.2.526~bump_version_patch_0.0.1: PATH: C:\Users\jg\AppData\Roaming\npm\node_modules\npm\bin\node-gyp-bin;G:\网易\项目\gulp-git-push\node_modules\.bin;C:\Program Files (x86)\Common Files\Intel\Shared Files\cpp\bin\Intel64;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\NetSarang;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\ProgramData\Lenovo\ReadyApps;C:\Program Files\TortoiseSVN\bin;C:\Program Files\SlikSvn\bin;C:\Program Files\Lenovo\Fingerprint Manager Pro\;C:\Program Files (x86)\GtkSharp\2.12\bin;C:\Program Files (x86)\Windows Live\Shared;C:\Program Files (x86)\nodejs\;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;D:\Program Files (x86)\QuickTime\QTSystem\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\OpenVPN\bin;C:\Program Files\Git\cmd;C:\windows\System32\OpenSSH\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files (x86)\Gpg4win\..\GnuPG\bin;C:\Program Files\smimesign;C:\Program Files\nodejs\;C:\Program Files (x86)\Yarn\bin\;C:\Program Files\TortoiseGit\bin;C:\Users\jg\AppData\Local\Programs\Python\Python37-32\Scripts\;C:\Users\jg\AppData\Local\Programs\Python\Python37-32\;D:\Cocos\Cocos2d-x\Cocos2d-x-3.10\templates;D:\Cocos\Cocos2d-x\Cocos2d-x-3.10\tools\cocos2d-console\bin;C:\Program Files\Java\jdk1.8.0_05\bin;C:\Program Files\Java\jdk1.8.0_05\jre\bin;D:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin;C:\Program Files (x86)\ICSClient;C:\Users\jg\AppData\Local\Microsoft\WindowsApps;C:\Users\jg\AppData\Local\Programs\Fiddler;C:\Users\jg\AppData\Local\Microsoft\WindowsApps;G:\Program Files\JetBrains\PyCharm 2018.3.3\bin;D:\Program Files\JetBrains\WebStorm 2018.3.4\bin;C:\Users\jg\AppData\Roaming\npm;C:\Users\jg\AppData\Local\Yarn\bin
+10 verbose lifecycle gulp-git-push@2.2.526~bump_version_patch_0.0.1: CWD: G:\网易\项目\gulp-git-push
+11 silly lifecycle gulp-git-push@2.2.526~bump_version_patch_0.0.1: Args: [ '/d /s /c', 'gulp release --type=patch' ]
+12 silly lifecycle gulp-git-push@2.2.526~bump_version_patch_0.0.1: Returned: code: 1  signal: null
+13 info lifecycle gulp-git-push@2.2.526~bump_version_patch_0.0.1: Failed to exec bump_version_patch_0.0.1 script
+14 verbose stack Error: gulp-git-push@2.2.526 bump_version_patch_0.0.1: `gulp release --type=patch`
+14 verbose stack Exit status 1
+14 verbose stack     at EventEmitter.<anonymous> (C:\Users\jg\AppData\Roaming\npm\node_modules\npm\lib\utils\lifecycle.js:279:16)
+14 verbose stack     at EventEmitter.emit (events.js:189:13)
+14 verbose stack     at ChildProcess.<anonymous> (C:\Users\jg\AppData\Roaming\npm\node_modules\npm\lib\utils\spawn.js:40:14)
+14 verbose stack     at ChildProcess.emit (events.js:189:13)
+14 verbose stack     at maybeClose (internal/child_process.js:970:16)
+14 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:259:5)
+15 verbose pkgid gulp-git-push@2.2.526
+16 verbose cwd G:\网易\项目\gulp-git-push
+17 error Windows_NT 10.0.17134
+18 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Users\\jg\\AppData\\Roaming\\npm\\node_modules\\npm\\bin\\npm-cli.js" "run" "bump_version_patch_0.0.1"
+19 error node v10.15.3
+20 error npm  v4.1.1
+21 error code ELIFECYCLE
+22 error gulp-git-push@2.2.526 bump_version_patch_0.0.1: `gulp release --type=patch`
+22 error Exit status 1
+23 error Failed at the gulp-git-push@2.2.526 bump_version_patch_0.0.1 script 'gulp release --type=patch'.
+23 error Make sure you have the latest version of node.js and npm installed.
+23 error If you do, this is most likely a problem with the gulp-git-push package,
+23 error not with npm itself.
+23 error Tell the author that this fails on your system:
+23 error     gulp release --type=patch
+23 error You can get information on how to open an issue for this project with:
+23 error     npm bugs gulp-git-push
+23 error Or if that isn't available, you can get their info via:
+23 error     npm owner ls gulp-git-push
+23 error There is likely additional logging output above.
+24 verbose exit [ 1, true ]
