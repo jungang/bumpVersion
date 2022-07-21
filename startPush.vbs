@@ -1,2 +1,2 @@
 set ws=WScript.CreateObject("WScript.Shell")
-ws.Run "everyDay.bat",0
+ws.Run "G:\everyDay.bat",0
