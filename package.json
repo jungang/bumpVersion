@@ -1,6 +1,6 @@
 {
   "name": "gulp-git-push",
-  "version": "3.2.19",
+  "version": "3.2.20",
   "description": "Pushes local changes to remote repository -131",
   "main": "index.js",
   "scripts": {
@@ -10,7 +10,7 @@
     "bump_version_major_1.0.0": "gulp release --type=major",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Tiago Ferreira",
+  "author": "songjungang",
   "license": "ISC",
   "dependencies": {
     "gulp-git": "^2.9.0",
