@@ -53,5 +53,3 @@ console.log(isValid("(])"));
 // isValid("()[]{}");
 // isValid("([)]");
 // isValid("{[]}");
-
-

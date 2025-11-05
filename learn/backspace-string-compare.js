@@ -34,7 +34,7 @@ let backspaceCompare = function(S, T) {
 
 	console.log(arr_S);
 	console.log(arr_T);
-	
+
 	return arr_T.join('') == arr_S.join('')
 };
 
