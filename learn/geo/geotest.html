@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+
+	<style>
+		p{
+			word-break: break-all;
+			overflow: auto;
+			height: 50%;
+		}
+	</style>
+	<script src="http://163h5.nos-jd.163yun.com/h5/libs/zepto.js"></script>
+	<script>
+		"use strict";
+		/**
+		 * Created by jg on 2019.1.25.0025.
+		 */
+
+		let n=100000;
+		let t1,t3,t4,t5,arr, cal
+
+		//进行经纬度转换为距离的计算
+		function Rad(d){
+			return d * Math.PI / 180.0;//经纬度转换成三角函数中度分表形式。
+		}
+
+		//计算距离，参数分别为第一点的纬度，经度；第二点的纬度，经度
+		function GetDistance(lat1,lng1,lat2,lng2){
+			let radLat1 = Rad(lat1);
+			let radLat2 = Rad(lat2);
+			let a = radLat1 - radLat2;
+			let  b = Rad(lng1) - Rad(lng2);
+			let s = 2 * Math.asin(Math.sqrt(Math.pow(Math.sin(a/2),2) +
+					Math.cos(radLat1)*Math.cos(radLat2)*Math.pow(Math.sin(b/2),2)));
+			s = s *6378.137 ;// EARTH_RADIUS;
+			s = Math.round(s * 10000) / 10000; //输出为公里
+			//s=s.toFixed(4);
+			return s;
+		}
+
+		//计时
+		async function time() {
+			return Promise.resolve(new Date().getTime());
+		}
+
+		//随机地址数据
+		function creatArr(n) {
+
+			return new Promise(resolve => {
+				let _arr=[];
+				for(let i=1;i<=n;i++){
+					_arr.push([Math.random()*100,Math.random()*100,Math.random()*100,Math.random()*100])
+				}
+				resolve(_arr)
+			});
+		}
+
+		//计算
+		function calArr(arr) {
+			return new Promise(resolve => {
+				let _list = []
+				for(let i=0;i<arr.length;i++){
+					_list.push(GetDistance(...arr[i]))
+				}
+				resolve(_list)
+			});
+		}
+		async function fn1() {
+			t1  = await time();
+			arr = await creatArr($('input').val());
+			t3  = await time();
+			$('#t1').text(t3-t1)
+			$('#arr').text(arr)
+		}
+		async function fn2() {
+			t1  = await time();
+			cal = await calArr(arr);
+			t3  = await time();
+			$('#t2').text(t3-t1)
+			$('#cal').text(cal.sort())
+		}
+
+	</script>
+</head>
+<body>
+
+<input type="text" value="1000"><br>
+
+<button onclick="fn1()">生成数据</button>   <span>耗时：<span id="t1"></span> 毫秒</span><br>
+
+<textarea name="" id="arr" cols="30" rows="10"></textarea><br>
+
+<button onclick="fn2()">计算</button>     <span>耗时：<span id="t2"></span> 毫秒</span><br>
+
+<textarea name="" id="cal" cols="30" rows="10"></textarea>
+
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+  <style>
+    svg, .svg {
+      background-color: #f0f3f9;
+    }
+    svg{
+    }
+    .svg {
+      width: 200px; height: 150px;
+    }
+    .rect {
+      width: 120px; height: 90px;
+      position: absolute;
+      margin: 30px 0 0 30px;
+      border-radius: 10px;
+      background-color: #a0b3d6;
+    }
+    .scale {
+      transform: scale(1, 1.5);
+    }
+
+
+  </style>
+</head>
+<body>
+
+
+<p><strong>CSS3控制的中心点缩放</strong></p>
+<div class="svg">
+  <div class="rect scale"></div>
+</div>
+<p><strong>SVG属性控制中心点缩放</strong></p>
+<div class="warp">
+
+  <svg width="400" height="300" viewBox="0 0 400 300">
+    <rect x="30" y="30" width="120" height="90" rx="10" ry="10" fill="#a0b3d6"
+          transform="translate(95 75) scale(1, 1.5) translate(-95 -75)">
+    </rect>
+  </svg>
+</div>
+
+</body>
+</html>

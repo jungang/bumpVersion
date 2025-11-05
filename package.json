@@ -1,0 +1,40 @@
+{
+  "name": "gulp-git-push",
+  "version": "3.3.2",
+  "description": "Pushes local changes to remote repository -131",
+  "main": "index.js",
+  "scripts": {
+    "bump": "gulp release",
+    "bump_version_patch_0.0.1": "gulp release --type=patch",
+    "bump_version_minor_0.1.0": "gulp release --type=minor",
+    "bump_version_major_1.0.0": "gulp release --type=major",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "songjungang",
+  "license": "ISC",
+  "dependencies": {
+    "gulp-git": "^2.9.0",
+    "gulp-util": "^3.0.8",
+    "map-stream": "^0.1.0",
+    "object-assign": "^4.1.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0",
+    "gulp": "^4.0.0",
+    "gulp-bump": "^3.1.3",
+    "gulp-filter": "^5.1.0",
+    "gulp-git": "^2.9.0",
+    "gulp-tag-version": "^1.3.1",
+    "yargs": "^13.2.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jungang/bumpVersion.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jungang/bumpVersion/issues"
+  },
+  "homepage": "https://github.com/jungang/bumpVersion#readme"
+}

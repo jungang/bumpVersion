@@ -1,0 +1,189 @@
+body,div,ul,ol,dt,dd,dl,li,h1,h2,h3,h4,h5,h6,form,input,select,textarea,p,img,a,span,strong,*{ padding:0; margin:0;}
+body{ font-size:12px; font-family:微软雅黑; color:#000000;overflow: hidden;}
+ul,ol,li{ list-style:none;}
+h1,h2,h3,h4,h5,h6{ font-size:12px; font-weight:normal;}
+img,input,select,textarea{ vertical-align:middle}
+img{ border:none;}
+a{ color:#333333; text-decoration:none;}
+a:hover{ color: #FF3300;}
+.clear{ clear:both; height:0; width:0; overflow:hidden;}
+.clearfix:after { content:"."; clear: both; height: 0; overflow: hidden; visibility: hidden; display: block; }
+.clearfix { zoom: 1;clear: both;}
+.clear{ clear:both}
+
+.footer{ width: 770px; height: 60px; background: #000; position: fixed; left: 50%; bottom: 0px; margin-left: -335px; cursor: pointer;}
+.ri-wrap{ position: relative; left: 10px; top: 10px; right: 333px; bottom: 10px; background: #F2F2F5; display: block; border: 1px solid #9f9f9f; border-radius:8px; padding: 0 10px; overflow: auto;}
+.hea-ri .logo{ width: 85px; height: 27px; background: url(../../../images/quizzes/v2/pic0.png) no-repeat; float: left; margin-top: 15px; margin-left: 10px;}
+.hea-ri{ width: 100%; height: 53px;}
+.hea-ri .pas{ width: 14px; height: 14px; background: url(../../../images/quizzes/v2/pic1.png); float: right; cursor: pointer; margin-top: 22px; margin-right: 28px;}
+
+/* 试卷列表 */
+
+.wra-con{ width: 100%; height: 81%; background: #fff; padding-top: 80px;}
+.wra-con strong{ font-size: 34px; color: #565656; width: 140px; height: 40px; margin: auto; display: block;}
+.indem{ width: 951px; height: 275px; margin: auto; clear: both; margin-top: 80px;}
+.seleb{ width: 303px; height: 275px; float: left; border-right:1px dashed #ccc; }
+.seleb-im{ width: 98px; height: 98px; margin:0 auto; margin-top: 20px;}
+.seleb h1{ font-size: 24px; margin-top: 25px; color: #492604; text-align: center;}
+.seleb p{ font-size: 14px; margin-top: 10px; color: #492604; text-align: center;}
+.star-btn{ width: 85%; height: 43px; background: #1FA6EC; text-align: center; cursor: pointer; line-height: 43px; color: #fff; font-size: 20px; border-radius:5px; margin: 0 auto; margin-top: 20px; }
+.bor-no{ border: none;}
+
+/* 答题 */
+
+.answer{ width: 100%;
+    /*height: 90%; */
+    background: #fff; display: block; padding-top: 15px; position: relative; overflow: hidden; overflow-y: auto;}
+.Stuff{ width: 99%; background: #FFFDF0; border:1px solid #FFD06C; margin:0 auto; position: relative;}
+.Stuff-nav{ height: 35px; width: 95%; border-bottom: 1px #FFD06C dashed; margin: auto;}
+.Stuff-nav h1{ width: 55px; height: 17px; background: url(../../../images/quizzes/v2/pic5.png) no-repeat; margin-top:17px;}
+.Stuff p{ margin: 20px 20px; text-indent: 30px; line-height: 25px; font-size: 12px; color: #000;}
+.Stuff .po{ width: 17px; height: 16px; background: url(../../../images/quizzes/v2/pic6.png) no-repeat; position: absolute; right: -1px; bottom: -1px; z-index: 999;}
+.choice{ width: 99%; margin:0 auto; margin-top: 25px;}
+.choice p{ font-weight: bold; font-size: 14px; margin-left: 5px; color: #000;}
+.choice p strong{ color: #F07300;}
+.ce-se{ width: 99%; margin: 0 auto; margin-top:5px; cursor: pointer;}
+.ce-se:hover{ background: #F4F4F4;}
+/* 多选选中 */
+.checkbox_over{ width: 19px; height: 17px; background: url(../../../images/quizzes/v2/pic7.png) no-repeat; float: left; margin-top: 10px; margin-left: 8px;}
+/* 多选未选 */
+.checkbox{ width: 19px; height: 17px; background: url(../../../images/quizzes/v2/pic8.png) no-repeat; float: left; margin-top: 10px; margin-left: 8px;}
+/* 单选选中 */
+.radio_over{ width: 19px; height: 17px; background: url(../../../images/quizzes/v2/pic15.png) no-repeat; float: left; margin-top: 10px; margin-left: 8px;}
+/* 单选未选 */
+.radio{ width: 19px; height: 17px; background: url(../../../images/quizzes/v2/pic16.png) no-repeat; float: left; margin-top: 10px; margin-left: 8px;}
+
+.ce-se p{ float: left; line-height: 39px; margin-left: 15px; color: #000; width:90%;}
+.btn_set{ width: 99%; height: 44px; margin: 0 auto; margin-top: 35px; }
+.last{ width: 162px; height: 42px; float: left; background: #f07300; color: #fff; font-size: 18px; line-height: 42px; border-radius:5px; border: 1px solid #e16c00; margin-right: 20px; cursor: pointer;}
+.last_first{ width: 162px; height: 42px; float: left; background: #b3b3b3; color: #fff; font-size: 18px; line-height: 42px; border-radius:5px; border: 1px solid #9d9d9d; text-align:center; margin-right:20px;}
+.last h1{ width: 6px; height: 11px; background: url(../../../images/quizzes/v2/pic9.png) no-repeat; float: left; margin-top: 16px; margin-left: 45px; margin-right: 10px;}
+.next{ width: 162px; height: 42px; float: left; background: #f07300; color: #fff; font-size: 18px; line-height: 42px; border-radius:5px; border: 1px solid #e16c00; text-indent: 40px; cursor: pointer;}
+.next_end{ width: 162px; height: 42px; float: left; background: #b3b3b3; color: #fff; font-size: 18px; line-height: 42px; border-radius:5px; border: 1px solid #9d9d9d; text-align:center;}
+.next h2{ width: 6px; height: 11px; background: url(../../../images/quizzes/v2/pic10.png) no-repeat; float: right; margin-top: 16px; margin-right: 45px; margin-left: 10px;}
+
+.com{ width: 162px; height: 42px; float: left; background: #b3b3b3; color: #fff; font-size: 18px; line-height: 42px; border-radius:5px; border: 1px solid #9d9d9d; text-align: center; margin-left: 20px;}
+.com_over{ width: 162px; height: 42px; float: left; background: #48B1E7; color: #fff; font-size: 18px; line-height: 42px; border-radius:5px; border: 1px solid #0184C7; text-align: center; cursor: pointer;}
+#fuc{ height: 44px; width: 290px; float: right;}
+.time{ width: 162px; height: 42px; color: #F07300; float: right; font-size: 18px; line-height: 42px; border-radius:5px; border: 1px solid #F07300; text-align: center; margin-right: 20px; z-index: 1;}
+
+.but_tim{width: 90px; font-size: 14px; color: #4a4a4a; background: none; height: 40px; float: left; display: block; line-height: 44px;}
+.but_tim h1{ width: 17px; height: 17px; background: url(../../../images/quizzes/v2/pic11.png) no-repeat; float: left; margin-top: 0px; margin-left: 18px; margin-right: 5px; margin-top: 13px;}
+#wrapp{ width: 100%; position: fixed; bottom: 0px; left: 0px; background: #EBEBEB; z-index:1999;}
+
+#di-no{ width: 100%; background: #EBEBEB; display: none; padding-top: 15px; padding-bottom: 5px;}
+#btn-tos{ width: 140px; height: 28px; position: absolute; top: -28px; background: #EBEBEB; left: 50%; margin-left: -70px; border:1px solid #C8C8C8; border-bottom: none;  cursor: pointer; -webkit-border-top-left-radius:5px;-webkit-border-top-right-radius:5px;}
+#btn-tos p{ float: left; line-height: 28px; margin-left: 13px; font-size: 12px; color: #000;}
+#btn-tos p span{ color: #FF7A00; }
+#btn-tos h1{ width: 9px; height: 10px; background: url(../../../images/quizzes/v2/pic13.png) no-repeat; float: right; margin-right: 15px; margin-top: 10px;}
+
+#rata{ width: 100%; height: 13px; padding-left: 5px; z-index:999 !important;}
+.bar h1{ width: 16px; height: 8px; background: url(../../../images/quizzes/v2/pic14.png) no-repeat; float: right;}
+/* 蓝 */
+#di-no .blue{ width: 30px; height: 31px; background: #48B1E7; color: #fff; font-size: 14px; float: left; font-weight: bold; text-align: center; line-height: 31px;  border: 1px solid #0184C7; border-radius:6px; margin-left: 10px; margin-bottom: 10px; display: block; cursor: pointer;}
+/* 白 */
+#di-no .wite{ width: 30px; height: 31px; background: #fff; color: #5F5F5F; font-size: 14px; float: left; font-weight: bold; text-align: center; line-height: 31px;  border: 1px solid #b6b6b6; border-radius:6px; margin-left: 10px; margin-bottom: 10px; display: block; cursor: pointer;}
+/* 当前 */
+#di-no .when{ width: 31px; height: 31px;float: left; display: block; background: url(../../../images/quizzes/v2/pic18.png) no-repeat; margin-left: 10px; margin-bottom: 10px; cursor: pointer;}
+#di-no .when:hover{ background: url(../../../images/quizzes/v2/pic17.png) no-repeat; }
+
+
+/* 交卷 */
+
+#hand-wr{ width: 100%;height: 90%; background: #fff; padding-top: 15px; overflow: hidden; z-index: 999; clear: both;  position: relative; overflow-y:scroll; }
+.ch-tim{ width: 590px; height: 101px; margin:0px auto; margin-top: 40px;}
+.tim-le{ width: 270px; height: 80px; float: left; margin-left: 25px;}
+.tim-le img{ width: 80px; height: 77px; float: left;}
+.le-e{ float: left; margin-left: 25px;}
+.le-e h1{ font-size: 20px; font-family: 微软雅黑; color: #000; margin-top: 5px;}
+.le-e p{ margin-top: 12px; color: #4A4A4A;}
+.le-e p span{ font-size: 32px; color: #F3655E;}
+.tim-tw p{ font-size: 14px;}
+.tim-tw p span{ font-size: 30px; color: #4A4A4A; margin-top: 5px;}
+.solve{ width: 350px; height: 47px; background: #1FA6EC;
+    color: #ffffff; border:1px solid #1298DE; border-radius:5px; text-align: center; line-height: 47px; font-size: 18px; margin: 20px auto 0 auto; cursor: pointer;}
+.wr-botm{width: 100%; height: 380px; background: #fff; margin-top: 30px;}
+.to-back{ height: 21px; width: 100%; background: url(../../../images/quizzes/v2/pic21.png) repeat-x;}
+.wap-cen{ width: 100%; height: 22px; margin-bottom: 20px;}
+.cen-si{ width: 528px; height: 21px; background: url(../../../images/quizzes/v2/pic22.png) no-repeat; text-align: center; line-height: 22px; margin: auto; color: #000; font-family: 微软雅黑; font-size: 18px;}
+.div_center{ width: 445px; height: auto; text-align: center;margin: auto;}
+.divide-line {
+    width: 100%;
+    height: 1px;
+    border-top: 1px dashed #d6d6d6;
+    margin: 14px auto 18px auto;
+}
+/* 绿色 */
+.gre{ width: 31px; height: 31px; background: #82BB46; color: #fff; font-weight: bold; line-height: 31px; text-align: center; font-size: 14px; display: inline-block; border: 1px solid #559511; border-radius:5px; margin-left: 10px; margin-bottom: 10px; cursor: pointer;}
+/* 红色 */
+.red{ width: 31px; height: 31px; background: #F3655E; color: #fff; font-weight: bold; line-height: 31px; text-align: center; font-size: 14px; display: inline-block; border: 1px solid #E02219; border-radius:5px; margin-left: 10px; margin-bottom: 10px; cursor: pointer;}
+
+/* 解析 */
+#analysis{width: 100%; height: 94%; background: #fff; padding-top: 15px; position: relative; overflow: hidden; z-index: 899; overflow-y:scroll; }
+.text-cen{ text-align: center !important;}
+#btn-too{ width: 140px; height: 28px; position: absolute; top: -28px; background: #EBEBEB; left: 50%; margin-left: -70px; border:1px solid #C8C8C8; border-bottom: none;  cursor: pointer; -webkit-border-top-left-radius:5px;-webkit-border-top-right-radius:5px; color: #000; text-align: center; line-height: 28px;}
+
+
+
+#wraptw{ width: 100%; position: absolute; bottom: 0px; left: 0px; background: #EBEBEB; z-index:999;}
+#di-tw{ width: 100%; background: #EBEBEB; display: none; padding-top: 15px; padding-bottom: 5px;}
+#btn-top{ width: 140px; height: 28px; position: absolute; top: -28px; background: #EBEBEB; left: 50%; margin-left: -70px; border:1px solid #C8C8C8; border-bottom: none;  cursor: pointer; -webkit-border-top-left-radius:5px;-webkit-border-top-right-radius:5px;}
+#btn-top p{ float: left; line-height: 28px; margin-left: 13px; font-size: 12px; color: #000;}
+#btn-top p span{ color: #FF7A00; }
+#btn-top h1{ width: 9px; height: 10px; background: url(../../../images/quizzes/v2/pic13.png) no-repeat; float: right; margin-right: 15px; margin-top: 10px;}
+
+.btn-to{ width: 140px; height: 28px; position: absolute; top: -28px; background: #EBEBEB; left: 50%; margin-left: -70px; border:1px solid #C8C8C8; border-bottom: none;  cursor: pointer; -webkit-border-top-left-radius:5px;-webkit-border-top-right-radius:5px;}
+.btn-to p{ float: left; line-height: 28px; margin-left: 13px; font-size: 12px; color: #000;}
+.btn-to p span{ color: #FF7A00; }
+.btn-to h1{ width: 9px; height: 10px; background: url(../../../images/quizzes/v2/pic13.png) no-repeat; float: right; margin-right: 15px; margin-top: 10px;}
+
+#rata{ width: 100%; height: 18px; padding-left: 10px; margin-top: 10px; z-index: 999 !important;}
+.bar h1{ width: 16px; height: 8px; background: url(../../../images/quizzes/v2/pic14.png) no-repeat; float: right;}
+
+/* 蓝 */
+#di-tw .blue{ width: 30px; height: 31px; background: #48B1E7; color: #fff; font-size: 14px; float: left; font-weight: bold; text-align: center; line-height: 31px;  border: 1px solid #0184C7; border-radius:6px; margin-left: 10px; margin-bottom: 10px; display: block; cursor: pointer;}
+/* 白 */
+#di-tw .wite{ width: 30px; height: 31px; background: #fff; color: #5F5F5F; font-size: 14px; float: left; font-weight: bold; text-align: center; line-height: 31px;  border: 1px solid #b6b6b6; border-radius:6px; margin-left: 10px; margin-bottom: 10px; display: block; cursor: pointer;}
+/* 当前 */
+#di-tw .when{ width: 31px; height: 31px;float: left; display: block; background: url(../../../images/quizzes/v2/pic18.png) no-repeat; margin-left: 10px; margin-bottom: 10px; cursor: pointer;}
+#di-tw .when:hover{ background: url(../../../images/quizzes/v2/pic17.png) no-repeat; }
+#btn-t{ width: 140px; height: 28px; position: absolute; top: -28px; background: #EBEBEB; left: 50%; margin-left: -70px; border:1px solid #C8C8C8; border-bottom: none;  cursor: pointer; -webkit-border-top-left-radius:5px;-webkit-border-top-right-radius:5px; text-align: center; line-height: 28px; color: #000; z-index:999;}
+#rata-tw{ width: 100%; height: 13px; padding-left: 5px;}
+
+/* 绿色当前 */
+
+.dang{ width: 31px; height: 31px;float: left; display: block; background: url(../../../images/quizzes/v2/pic23.png) no-repeat; margin-left: 10px; margin-top: 10px; cursor: pointer;}
+.n-btn{ width: 100%; height: 40px; margin-top: 80px; padding-left: 15px;clear: both;}
+.look{ width: 162px; height: 42px; float: left; background: #1FA6EC; color: #fff; font-size: 18px; line-height: 42px; border-radius:5px; border: 1px solid #1298DE; text-align: center; margin-left: 20px; cursor: pointer;}
+
+.alas-zi{ width: 95%; margin-left: 20px; margin-bottom: 20px;}
+.zi-le{ width: 88px; float: left; margin-top: 6px;}
+.zi-le img{ float: left; width: 14px; height: 16px;}
+.zi-le h1{ float: left; color: #5D626D; margin-left: 10px; margin-top: 2px;}
+.zi-ri{ float: left; width: 80%; color: #5D626D;}
+.zi-ri p{ line-height: 30px; font-size: 12px;}
+
+#btn-tw{ width: 140px; height: 28px; position: absolute; top: -28px; background: #EBEBEB; left: 50%; margin-left: -70px; border:1px solid #C8C8C8; border-bottom: none;  cursor: pointer; -webkit-border-top-left-radius:5px;-webkit-border-top-right-radius:5px; text-align: center; color: #000; line-height: 28px; font-size: 12px;}
+.chong{ width: 100%; height: 9px; background: #EBEBEB; display: none;}
+
+/* 解析绿色 */
+.alas{ width: 98%; margin: auto; background: #fafff3; border:1px solid #6bab17; margin-top: 50px; margin-bottom: 50px;max-height: 300px;  overflow: scroll;}
+.alas-to{ width: 620px; height: 30px; margin-left: 20px; margin-top: 12px;}
+.alas-to h1{ font-size: 14px; color: #4b8400; font-weight: bold; float: left; margin-right: 60px;}
+.alas-to h2{ font-size: 14px; color: #4b8400; font-weight: bold; float: left; margin-right: 30px;}
+.alas-to h3{ font-size: 14px; color: #4b8400; font-weight: bold; float: left;}
+
+/* 红色边 */
+.alas-re{ width: 98%; margin: auto; background: #fff3f3; border:1px solid #FF8B8B; margin-top: 50px; margin-bottom: 50px;    max-height: 300px;  overflow: scroll;}
+.alas-ed{ width: 620px; height: 30px; margin-left: 20px; margin-top: 12px;}
+.alas-ed h1{ font-size: 14px; color: #FF8B8B; font-weight: bold; float: left; margin-right: 60px;}
+.alas-ed h2{ font-size: 14px; color: #FF8B8B; font-weight: bold; float: left; margin-right: 30px;}
+.alas-ed h3{ font-size: 14px; color: #FF8B8B; font-weight: bold; float: left;}
+
+
+.answer-wr{ width: 100%;
+    /*height: 90%; */
+    background: #fff; display: block; padding-top: 15px; position: relative; overflow: auto;}
+.del{ width:1000px; height:600px;}
+.n-btn a:hover{ color:#fff;}
+
