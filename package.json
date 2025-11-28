@@ -1,8 +1,11 @@
 {
   "name": "gulp-git-push",
-  "version": "3.3.76",
-  "description": "Pushes local changes to remote repository -131",
+  "version": "4.0.0",
+  "description": "Pushes local changes to remote repository",
   "main": "index.js",
+  "engines": {
+    "node": ">=8.0.0"
+  },
   "scripts": {
     "bump": "gulp release",
     "bump_version_patch_0.0.1": "gulp release --type=patch",
@@ -13,10 +16,11 @@
   "author": "songjungang",
   "license": "ISC",
   "dependencies": {
+    "ansi-colors": "^4.1.3",
+    "fancy-log": "^2.0.0",
     "gulp-git": "^2.9.0",
-    "gulp-util": "^3.0.8",
-    "map-stream": "^0.1.0",
-    "object-assign": "^4.1.1"
+    "plugin-error": "^2.0.1",
+    "through2": "^4.0.2"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
